@@ -19,15 +19,20 @@ require 'header.php';
     <!--Contenedor-->
     <div class="cont-tabs">
         <div class="card animated bounceInDown">
-            <p class="cart-title">Parkimetro #54</p>
-            <div class="col-6">
-                <p>Zona: Centro</p>
+            <p class="card-title">Parkimetro #54</p>
+            <div class="icon-ticket">
+                <img class="" src="assets/icons/parkimeter.png" alt="">
+            </div>
+            <div class="col-4 center">
+                <p class="bold">Zona: Centro</p>
                 <p>Calle: Av. Juarez</p>
             </div>
-            <div class="col-6">
-                <p>Tiempo Restante: <br> <span class="time">53:04</span></p>
+            <div class="col-4 center">
+                <p class="bold">Tiempo Restante: <br> <span class="time">53:04</span></p>
             </div>
-            <a class="btn bg-verde center" href="ticket.php">Extender Tiempo</a>
+            <div class="col-12 center">
+                <a class="btn bg-verde center" href="ticket.php">Extender Tiempo</a>
+            </div>
         </div>
         
     </div>
