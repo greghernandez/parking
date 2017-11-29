@@ -20,9 +20,14 @@ require 'header.php';
     <div class="cont-tabs">
         <div class="card animated bounceInDown">
             <p class="cart-title">Parkimetro #54</p>
-            <p>Av. Juarez</p>
-            <p>Tiempo Restante: <br> <span class="time">53:04</span></p>
-            <button class="btn">Extender Tiempo</button>
+            <div class="col-6">
+                <p>Zona: Centro</p>
+                <p>Calle: Av. Juarez</p>
+            </div>
+            <div class="col-6">
+                <p>Tiempo Restante: <br> <span class="time">53:04</span></p>
+            </div>
+            <a class="btn bg-verde center" href="ticket.php">Extender Tiempo</a>
         </div>
         
     </div>

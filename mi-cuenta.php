@@ -7,6 +7,15 @@ require 'header.php';
 </div>
 </div>
     <div id="contenedor">
+    	<div class="img-usuario">
+    		
+    	</div>
+    	<div class="card animated bounceInDown">
+    		
+    	</div>
+    	<div class="card animated bounceInDown">
+    		
+    	</div>
     </div>
 <?php
 require 'menu.php';
