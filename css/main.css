@@ -104,15 +104,6 @@ contenedor - contenido
   overflow: auto;
   background-color: #F9F9FA;
 }
-.cont-map{
-  width: 100%;
-  height: 84%;
-  padding: 0px;
-  position: absolute;
-  top: 8%;
-  overflow: auto;
-  background-color: #F9F9FA;
-}
 
 /*----------
  Cards

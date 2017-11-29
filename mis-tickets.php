@@ -22,7 +22,7 @@ require 'header.php';
             <p class="cart-title">Parkimetro #54</p>
             <p>Av. Juarez</p>
             <p>Tiempo Restante: <br> <span class="time">53:04</span></p>
-            <button class="btn">Ver más</button>
+            <button class="btn">Extender Tiempo</button>
         </div>
         
     </div>
