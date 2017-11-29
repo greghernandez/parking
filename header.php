@@ -16,7 +16,7 @@
 <body>
 
 	<div id="navbar">
-		<div class="nav-back">
+		<div class="nav-back" onclick="window.history.back()">
 			<img class="menu-icon" src="assets/icons/back.png" alt="">
 		</div>
 		

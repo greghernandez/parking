@@ -25,8 +25,8 @@
                         <img class="img-ticket" src="assets/icons/parkimeter.png" alt="">
                     </div>
                     <div class="col-4 center">
-                        <p class="bold">Zona: Centro</p>
-                        <p>Calle: Av. Juarez</p>
+                        <p><span class="bold">Zona: </span>Centro</p>
+                        <p><span class="bold">Calle: </span>Av. Juarez</p>
                     </div>
                     <div class="col-4 center">
                         <p class="bold">Tiempo Restante: <br> <span class="time">53:04</span></p>

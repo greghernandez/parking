@@ -11,7 +11,8 @@ require 'header.php';
     		
     	</div>
     	<div class="card animated bounceInDown">
-    		
+            <p>Gregorio Artturo</p>
+            <p>Hernández Jaimes</p>
     	</div>
     	<div class="card animated bounceInDown">
     		
