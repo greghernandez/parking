@@ -8,7 +8,7 @@ require 'header.php';
 	</div>
 </div>
 </div>
-    <div id="contenedor">
+    <div id="contenedor-map">
 	<input id="pac-input" class="controls" type="text" placeholder="Busca un lugar...">
     	<div id="map"></div>
     	<script>window.addEventListener('load',geolocalizar,true);</script>
