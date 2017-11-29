@@ -7,6 +7,7 @@ require 'header.php';
 </div>
 </div>
     <div id="contenedor">
+    	<div class="card"></div>
     </div>
 <?php
 require 'menu.php';
