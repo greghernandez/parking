@@ -4,7 +4,7 @@ require 'header.php';
 ?>
 <script src="js/mapa.js"></script>
 	<div class="nav-title">
-		<span class="title">Parking</span>	
+		<span class="title"><img id="p-logo" src="assets/icons/p-white.png">arking</span>	
 	</div>
 </div>
 </div>

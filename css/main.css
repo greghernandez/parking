@@ -58,8 +58,11 @@ Navbar
   display: table-cell;
   vertical-align: middle;
   color: #FFF;
+  font-size: 2em;
 }
-
+#p-logo{
+  width: 25px;
+}
 
 /*--------------------
  Tabs
@@ -98,6 +101,7 @@ Navbar
   overflow: auto;
   background-color: #F9F9FA;
 }
+
 /*--------------------
 contenedor - contenido
 --------------------*/

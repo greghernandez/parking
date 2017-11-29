@@ -23,13 +23,16 @@ function posicionUsuario(coordenadas){
           zoom: 16,
           mapTypeId: 'roadmap',
           disableDefaultUI: true
-        });                           
+        });
         var marker = new google.maps.Marker({
             position:{lat: parseFloat(lat), lng: parseFloat(long)},
             icon: "assets/icons/locationp.png",
-            map: map
-        });                          
-        
+            map: map,
+            url: "lugar.php"
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+            window.location.href = this.url;
+        });
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
