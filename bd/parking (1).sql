@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-11-2017 a las 21:34:21
+-- Tiempo de generación: 29-11-2017 a las 21:45:31
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 7.0.3
 
@@ -30,7 +30,9 @@ CREATE TABLE `auto` (
   `placa` varchar(9) COLLATE utf8_bin NOT NULL,
   `modelo` varchar(20) COLLATE utf8_bin NOT NULL,
   `color` varchar(20) COLLATE utf8_bin NOT NULL,
-  `fecha` date NOT NULL
+  `fecha` date NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  `estado` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
