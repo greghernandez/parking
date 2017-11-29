@@ -7,22 +7,21 @@ require 'header.php';
 </div>
 </div>
     <div id="contenedor">
-    	<div class="card">
+    	<div class="card animated bounceInDown">
     		<div class="center card-title">
                 <p>Parkimetro #51</p>
                 <p>Av. Juarez</p>
     		</div>
     		<div class="center time-cart bg-purple">
-    			<p>Tiempo Restante: <br>
-                50:43</p>
+    			<p class="bold">Tiempo Restante: <br>
+                <span class="cronometro">50:43</span></p>
     		</div>
-            <div>
-                <p>Monto Acual <br>
-                $50 MXN
-                </p>
+            <div class="center">
+                <p class="bold">Monto Actual:</p>
+                <p>$50 MXN</p>
             </div>
             <hr>
-            <div>
+            <div class="center">
                 <p>Extender tiempo</p>
             </div>
     	</div>
