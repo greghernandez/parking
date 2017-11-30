@@ -170,6 +170,7 @@ contenedor - contenido
   text-align: center;
   padding: 5px;
 }
+
 .icon-ticket{
   width: 20%;
   height: 100%;
@@ -197,7 +198,13 @@ contenedor - contenido
   font-size: 2em;
 }
 
-
+/**/
+.num-time{
+    width: 30%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
 
 
 
@@ -266,7 +273,6 @@ colores
     margin-left: 100px;
     margin-bottom: 20px;
 }
-
 /*--------------------inicio sesion-------------------------*/
 
 .fondo{

@@ -25,9 +25,11 @@ require 'header.php';
                 <p class="bold">Extender tiempo</p>
             </div>
             <div class="center">
-                <input type="number" min="0" value="15">
+                <input class="num-time" type="number" min="0" value="15">
             </div>
-            <a href="" class="btn bg-verde center">Realizar Pago</a>
+            <div class="center">
+                <a href="" class="btn bg-verde center">Realizar Pago</a>
+            </div>
     	</div>
     </div>
 <?php
