@@ -140,6 +140,14 @@ contenedor - contenido
   height: 40px;
 }
 
+.img-usuario{
+  width: 50%;
+  height: 20%;
+  position: relative;
+  background-color: black;
+  margin: 10px;
+}
+
 /*----------
  Cards
 ----------*/

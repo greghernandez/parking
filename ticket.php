@@ -22,8 +22,12 @@ require 'header.php';
             </div>
             <hr>
             <div class="center">
-                <p>Extender tiempo</p>
+                <p class="bold">Extender tiempo</p>
             </div>
+            <div class="center">
+                <input type="number" min="0" value="15">
+            </div>
+            <a href="" class="btn bg-verde center">Realizar Pago</a>
     	</div>
     </div>
 <?php
