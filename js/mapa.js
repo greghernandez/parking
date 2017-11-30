@@ -24,11 +24,15 @@ function posicionUsuario(coordenadas){
           mapTypeId: 'roadmap',
           disableDefaultUI: true
         });
+ 
         var marker = new google.maps.Marker({
-            position:{lat: parseFloat(lat), lng: parseFloat(long)},
+            //position: <?php $value['locacion']?>,
+            position:{lat:20.592806,lng: -100.398111},
             icon: "assets/icons/locationp.png",
             map: map,
             url: "lugar.php"
+        
+        //<?php } ?>
         });
         google.maps.event.addListener(marker, 'click', function() {
             window.location.href = this.url;
