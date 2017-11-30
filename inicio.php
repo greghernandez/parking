@@ -1,5 +1,10 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
-
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+	<link rel="stylesheet"
+  	href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
+  	<!-- or -->
+  	<link rel="stylesheet"
+  	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <div class="encabezadoSesion">
 <center><img src="assets/icons/icon.png" class="logoSesion"></center>
  <?php
@@ -12,7 +17,8 @@
 	 	$result = $con->query($qry);
 	 	$passBD = $result->fetch_assoc()['password'];
 	 		if ($passBD == $pass_usuario){
-	 			?><script>window.location.assign("index.php?correo_usuariof=<?php echo $correo_usuariof;?>");</script> <?php
+                ?>
+                <script>window.location.assign("index.php?correo_usuariof<?php echo $correo_usuario;?>");</script> <?php
 	 		}else{
 	 			?><script> alert('Usuario o contraseña incorrecta')</script> <?php
 	 		}
