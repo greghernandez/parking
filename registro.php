@@ -28,13 +28,16 @@
 					$telefono = $_POST['telefono'];
 					$tarjeta = $_POST['tarjeta'];
 					$cvv = $_POST['cvv'];
+					$password = $_POST['password'];
 
-					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($tarjeta) || empty($cvv)){
+					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($tarjeta) || empty($cvv) || empty($password)){
 						echo "<p class='badge center'> Por favor completa todos los campos</p>";
 					}else{
-						$qry= "INSERT INTO usuario;"
-    					$result = $con->query($qry);
-    					header("Location: inicio.php");
+						include ('conexion.php');
+    					$con = Conectarse();
+						$qry= "INSERT INTO usuario (num_usuario, nombre_usuario, apellido_usuario, correo, password, telefono, no_tarjeta, cvv_usuario, ) VALUES ('' , {$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$tarjeta}',  '{$cvv}')";
+    					echo $qry;
+    					//header("Location: index.php");
 
 					}
 
@@ -58,6 +61,9 @@
 				
 				<label for="">CVV</label>
 				<input type="number" name="cvv" placeholder="CVV">
+
+				<label for="">Pasword</label>
+				<input type="password" name="password" placeholder="password">
 				
 				<div class="center ">
 					<button type="submit" value="submit" name="submit" class="btn bg-azul btn-large"> Registrarme</button>
