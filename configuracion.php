@@ -7,6 +7,9 @@ require 'header.php';
 </div>
 </div>
     <div id="contenedor">
+    	<div class="card animated bounceInDown">
+    		<input type="text">
+    	</div>
     </div>
 <?php
 require 'menu.php';
