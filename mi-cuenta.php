@@ -27,8 +27,8 @@ require 'header.php';
     }
 ?>
     <div id="contenedor">
-    	<div class="img-usuario animated bounceInDown">
-    		
+    	<div class="center img-usuario animated bounceInDown">
+    		<img src="assets/user/user.png" class="img-perfil" alt="">
     	</div>
     	<div class="card animated bounceInDown">
             <p class="card-title">Información personal:</p>
@@ -42,9 +42,6 @@ require 'header.php';
             <p class="card-title">Coche:</p>
             <p><span class="bold">Modelo:  </span><?php echo $modelo ?></p>
             <p><span class="bold">Placa:  </span><?php echo $placa ?></p>
-        </div>
-        <div class="card animated bounceInDown">
-            <p class="card-title">Metodo de pago:</p>
         </div>
 
     </div>
