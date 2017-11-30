@@ -32,6 +32,9 @@
 					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($tarjeta) || empty($cvv)){
 						echo "<p class='badge center'> Por favor completa todos los campos</p>";
 					}else{
+						$qry= "INSERT INTO usuario;"
+    					$result = $con->query($qry);
+    					header("Location: inicio.php");
 
 					}
 
