@@ -14,7 +14,7 @@ require 'header.php';
     		</div>
     		<div class="center time-cart bg-purple">
     			<p class="bold">Tiempo Restante: <br>
-                <span class="cronometro">50:43</span></p>
+                <span class="cronometro">59:43</span></p>
     		</div>
             <div class="center">
                 <p class="bold">Monto Actual:</p>

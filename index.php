@@ -47,16 +47,18 @@ function posicionUsuario(coordenadas){
         ?>
           latitud = parseFloat(<?php echo $value['latitud']?>);
           longi = parseFloat(<?php echo $value['longi']?>);
+        
         var marker = new google.maps.Marker({
             position:{lat: latitud,lng: -longi},
             icon: "assets/icons/locationp.png",
             map: map,
-            url: "lugar.php"
+            url: "lugar.php?locacion=<?php echo $value['locacion'];?>"
         });
-        <?php } ?>
         google.maps.event.addListener(marker, 'click', function() {
             window.location.href = this.url;
         });
+        <?php } ?>
+
         // Create the search box and link it to the UI element.
         var input = document.getElementById('pac-input');
         var searchBox = new google.maps.places.SearchBox(input);
