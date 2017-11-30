@@ -116,6 +116,17 @@ contenedor - contenido
   background-color: #F9F9FA;
 }
 
+.cont-registro{
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 8%;
+  overflow: auto;
+  background-color: #F9F9FA;
+}
+
 .col-4{
   width: 40%;
   height: 100%;
@@ -259,6 +270,7 @@ botones
   padding: 7px;
   user-select: none;
   border-radius: 25px;
+  margin: 10px;
   border: none;
   text-align: center;
   white-space: nowrap;
@@ -275,7 +287,20 @@ botones
 .btn-large{
   padding: 10px 25px 10px 25px !important;
 }
-
+/*--------
+  Badges
+---------*/
+.badge{
+  width: 100%;
+  height: 25px;
+  color: #FFFFFF;
+  background-color: #ff00008c;
+  border-radius: 25px;
+  display: block;
+  margin: auto;
+  padding: 3px;
+  box-sizing: border-box;
+}
 /*
 colores
 */
@@ -284,6 +309,10 @@ colores
 }
 .bg-purple{
   background-color: #933ec5;
+}
+
+.bg-azul{
+  background-color: #0078a7;
 }
 
 #time{
@@ -364,4 +393,38 @@ section>button {
     color: white;
     outline: none;
     position: relative;
+}
+/*----------
+Registro
+----------*/
+.form-reg{
+  width: 100%;
+  width: 100%;
+  position: relative;
+  padding: 0% 10% 0% 10%;
+  box-sizing: border-box;
+}
+.logo{
+  width: 100px;
+  height: 100px;
+  margin: 15px;
+  display: block;
+  vertical-align: middle;
+  margin: auto;
+}
+label{
+  display: block;
+  font-weight: bold;
+  margin: 5px;
+}
+
+input{
+  width: 85%;
+  height: 35px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: 25px;
+  display: block;
+  border: 2px solid #f3f3f3;
+  outline: none;
 }
