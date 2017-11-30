@@ -391,7 +391,6 @@ section>button {
     outline: none;
     position: relative;
 }
-<<<<<<< HEAD
 #correoSesion, #contrasenaSesion{
     text-align: center;
     width: 80%;
@@ -454,5 +453,5 @@ input{
   display: block;
   border: 2px solid #f3f3f3;
   outline: none;
->>>>>>> origin/master
+
 }
