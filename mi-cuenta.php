@@ -7,11 +7,13 @@ require 'header.php';
 </div>
 </div>
     <div id="contenedor">
-    	<div class="img-usuario">
+    	<div class="img-usuario animated bounceInDown">
     		
     	</div>
     	<div class="card animated bounceInDown">
             <p>Nombre:</p> 
+            <hr>
+            <p>Email:</p>
     	</div>
         <div class="card animated bounceInDown">
             <p>Contacto:</p>

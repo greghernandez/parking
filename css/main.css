@@ -58,7 +58,7 @@ Navbar
   display: table-cell;
   vertical-align: middle;
   color: #FFF;
-  font-size: 2em;
+  font-size: 1.3em;
 }
 #p-logo{
   width: 25px;
@@ -200,8 +200,9 @@ contenedor - contenido
 
 /**/
 .num-time{
-    width: 30%;
-    padding: 12px 20px;
+    width: 60px;
+    height: 60px;
+    padding: 15px 15px;
     margin: 8px 0;
     box-sizing: border-box;
 }
@@ -257,6 +258,10 @@ botones
   color: #FFFFFF;
   outline: none;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.btn-large{
+  padding: 10px 25px 10px 25px !important;
 }
 
 /*

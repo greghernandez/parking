@@ -25,10 +25,10 @@ require 'header.php';
                 <p class="bold">Extender tiempo</p>
             </div>
             <div class="center">
-                <input class="num-time" type="number" min="0" value="15">
+                <input class="num-time" type="number" min="0" step="15"value="15">
             </div>
             <div class="center">
-                <a href="" class="btn bg-verde center">Realizar Pago</a>
+                <a href="" class="btn btn-large bg-verde center">Realizar Pago</a>
             </div>
     	</div>
     </div>
