@@ -27,7 +27,7 @@
         <input type="password" placeholder="Contraseña" id="contrasenaSesion" name="pass_user">
         <button name="inicio" id="registro-b">Iniciar</button>
         </form>
-        <button onclick="registro.php" >Registrar</button>
+        <button onclick="window.location='registro.php'" >Registrar</button>
         
         </section>
         
