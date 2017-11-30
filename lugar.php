@@ -28,15 +28,18 @@
                        
  		                    }
                         ?>
+                        
                         <p><span class="bold">Zona: </span><?php echo $rows[0]['colonia'];?></p>
                         <p><span class="bold">Calle: </span><?php echo $rows[0]['calle'];?></p>
                     </div>
+                       
                     <div class="col-4 center">
                         <p class="bold">¿Cuanto tiempo desea apartar? <br></p>
                       
                         
                     </div>
                 </div>
+                <form  action="" method="GET"> 
                   <label><select  name="Tiempo" >
 		                  <option id="time" value="0.15">15 minutos</option>
 		                  <option id="time" value="0.30">30 minutos</option>
@@ -58,15 +61,18 @@
                 <script>
                     time =document.getElementById('time').value;
                 </script>
-                    <?php $time = "<script>document.write(time) </script>";
-                          
+                    <?php 
+                          if(isset($_GET['sesion'])){
+                          $time = "<script>document.write(time) </script>";
+                          echo $qry1 = "UPDATE  parquimetro SET estado=0 WHERE locacion= '{$locacion}'";
+                          mysqli_query($con, $qry1);
+                          }
                     ?>
                     <div class="col-12 center">
-                        <a class="btn bg-verde center" href="ticket.php">Apartar</a>
+                        <a class="btn bg-verde center" href="ticket.php"><div name="sesion">Apartar</div></a>
                     </div>
-
+                </form>
             </div>
-            
         </div>
     <?php
     require 'menu.php';
