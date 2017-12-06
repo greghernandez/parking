@@ -21,9 +21,8 @@
          $num_usuario = $result2->fetch_assoc()['num_usuario'];
 	 		if ($passBD == $pass_usuario){
                 session_start();
-                echo $_SESSION['user']=$num_usuario;
-                ?>
-                <script>window.location.assign("index.php);</script> <?php
+                $_SESSION['user']=$num_usuario;
+                header("Location: index.php");
 	 		}else{
 	 			?><script> alert('Usuario o contraseña incorrecta')</script> <?php
 	 		}
