@@ -16,9 +16,14 @@
 	 	$qry= "SELECT password FROM usuario WHERE correo='{$correo_usuario}';";
 	 	$result = $con->query($qry);
 	 	$passBD = $result->fetch_assoc()['password'];
+         $qry2= "SELECT num_usuario FROM usuario WHERE correo='{$correo_usuario}';";
+	 	$result2 = $con->query($qry2);
+         $num_usuario = $result2->fetch_assoc()['num_usuario'];
 	 		if ($passBD == $pass_usuario){
+                session_start();
+                echo $_SESSION['user']=$num_usuario;
                 ?>
-                <script>window.location.assign("index.php?correo_usuariof<?php echo $correo_usuario;?>");</script> <?php
+                <script>window.location.assign("index.php);</script> <?php
 	 		}else{
 	 			?><script> alert('Usuario o contraseña incorrecta')</script> <?php
 	 		}

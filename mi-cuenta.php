@@ -7,7 +7,8 @@ require 'header.php';
 </div>
 </div>
 <?php 
-    $id_usuario = 1; /*Remplazar con un session ID*/
+    session_start();
+    $id_usuario = $_SESSION['user']; /*Remplazar con un session ID*/
     include ('conexion.php');
     $con = Conectarse();
     $qry= "SELECT * FROM usuario WHERE num_usuario = $id_usuario;";

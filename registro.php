@@ -35,9 +35,11 @@
 					}else{
 						include ('conexion.php');
     					$con = Conectarse();
-						$qry= "INSERT INTO usuario (num_usuario, nombre_usuario, apellido_usuario, correo, password, telefono, no_tarjeta, cvv_usuario) VALUES ('' , {$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$tarjeta}',  '{$cvv}')";
+						$qry= "INSERT INTO usuario (nombre_usuario, apellido_usuario, correo, password, telefono, no_tarjeta, cvv_usuario) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$tarjeta}',  '{$cvv}')";
+
     					echo $qry;
-    					//header("Location: index.php");
+    					$result = $con->query($qry);
+    					header("Location: index.php");
 
 					}
 
