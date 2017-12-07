@@ -1,7 +1,5 @@
 <?php
 	require 'funciones.php';
-	session_start();
-    estaLogeado();//El usuario esta logeado
 ?>
 <!DOCTYPE html>
 <html lang="es">
