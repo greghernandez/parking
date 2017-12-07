@@ -16,9 +16,9 @@
 	 	$qry= "SELECT password FROM usuario WHERE correo='{$correo_usuario}';";
 	 	$result = $con->query($qry);
 	 	$passBD = $result->fetch_assoc()['password'];
-         $qry2= "SELECT num_usuario FROM usuario WHERE correo='{$correo_usuario}';";
+         $qry2= "SELECT no_usuario FROM usuario WHERE correo='{$correo_usuario}';";
 	 	$result2 = $con->query($qry2);
-         $num_usuario = $result2->fetch_assoc()['num_usuario'];
+         $num_usuario = $result2->fetch_assoc()['no_usuario'];
 	 		if ($passBD == $pass_usuario){
                 session_start();
                 $_SESSION['user']=$num_usuario;
