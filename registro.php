@@ -43,6 +43,11 @@
 
     					echo $qry;
     					$result = $con->query($qry);
+    					$qry2= "SELECT no_usuario FROM usuario WHERE correo='{$email}';";
+	 					$result2 = $con->query($qry2);
+         				$num_usuario = $result2->fetch_assoc()['no_usuario'];
+                		session_start();
+                		$_SESSION['user']=$num_usuario;
     					header("Location: coches.php?opcion=agregar");
 
 					}
