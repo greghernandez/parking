@@ -11,7 +11,7 @@ estaLogeado();//El usuario esta logeado
     <div id="contenedor">
     	<div class="card animated bounceInDown">
     		<div class="center card-title">
-                <p>Parkimetro #51</p>
+                <p>Parkimetro #<?php echo $_GET['id'] ?></p>
                 <p>Av. Juarez</p>
     		</div>
     		<div class="center time-cart bg-purple">
