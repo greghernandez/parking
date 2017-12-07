@@ -25,7 +25,12 @@
                             $rows;
  		                    while ($row=$result->fetch_assoc()) {
  		                    	$rows[]=$row;
-                       
+                            if(isset($_GET['locacion'])){
+                                $locacion;
+                    /*cambiar esta parte */
+                                $qry1 = "UPDATE  parquimetro SET estado=1 WHERE locacion= '{$locacion}'";
+                                mysqli_query($con, $qry1);
+                          }
  		                    }
                         ?>
                         
@@ -59,20 +64,12 @@
 		                  <option value="4">4 hora</option>
 	                   </select></label>
                     <div class="col-12 center">
-                        <button class="btn bg-verde center" name="locacion" value="<?php echo $locacion; ?>"> Apartar</button>
+                        <button class="btn bg-verde center" name="locacion" value="<?php echo $locacion; ?>"> Realizar Pago</button>
                     </div>
                 </form>
                                 <script>
                     time =document.getElementById('time').value;
                 </script>
-                    <?php 
-                $time = 2;
-                          if(isset($_GET['aparta'])){
-                          echo $locacion;
-                          echo $qry1 = "UPDATE  parquimetro SET estado=0 WHERE locacion= '{$_GET['locacion']}'";
-                          mysqli_query($con, $qry1);
-                          }
-                    ?>
             </div>
         </div>
     <?php

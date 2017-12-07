@@ -32,8 +32,6 @@ function reinicio () {
 function cronometro () {
 	if (centesimas < 99) {
 		centesimas++;
-		if (centesimas < 10) { centesimas = "0"+centesimas }
-		Centesimas.innerHTML = ":"+centesimas;
 	}
 	if (centesimas == 99) {
 		centesimas = -1;
