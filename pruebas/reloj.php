@@ -76,21 +76,7 @@ function parar () {
 	document.getElementById("parar").disabled = true;
 	document.getElementById("continuar").disabled = false;
 }
-function reinicio () {
-	clearInterval(control);
-	centesimas = 0;
-	segundos = 0;
-	minutos = 0;
-	horas = 0;
-	Centesimas.innerHTML = ":00";
-	Segundos.innerHTML = ":60";
-	Minutos.innerHTML = ":"+<?php echo $minuto?>;
-	Horas.innerHTML = <?php echo $minuto?>;
-	document.getElementById("inicio").disabled = false;
-	document.getElementById("parar").disabled = true;
-	document.getElementById("continuar").disabled = true;
-	document.getElementById("reinicio").disabled = true;
-}
+
 function cronometro () {
 	if ((segundos ==0)&&(minutos==0)&&(horas==0)){
 		parar();
