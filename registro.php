@@ -45,7 +45,7 @@
 
     					echo $qry;
     					$result = $con->query($qry);
-    					header("Location: index.php");
+    					header("Location: coches.php?opcion=agregar");
 
 					}
 

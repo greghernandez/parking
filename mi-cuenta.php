@@ -41,9 +41,14 @@ require 'header.php';
             <p><span class="bold">Telefono:  </span><?php echo $telefono ?></p>
     	</div>
         <div class="card animated bounceInDown">
-            <p class="card-title">Coche:</p>
+            <p class="card-title">Coche Activo:</p>
             <p><span class="bold">Modelo:  </span><?php echo $modelo ?></p>
             <p><span class="bold">Placa:  </span><?php echo $placa ?></p>
+        </div>
+        <div class="card animated bounceInDown center">
+            <p class="card-title">Coches</p>
+            <a href="" class="btn bg-verde">Agregar Coche</a>
+            <a href="" class="btn bg-verde">Administrar Coches</a>
         </div>
 
     </div>
