@@ -9,11 +9,11 @@ $id_usuario = $_SESSION['user']; /*Remplazar con un session ID*/
 
 include ('conexion.php');
     $con = Conectarse();
-    $qry= "SELECT * FROM usuario WHERE num_usuario = $id_usuario;";
+    $qry= "SELECT * FROM usuario WHERE no_usuario = $id_usuario;";
     $result = $con->query($qry);
     while ($row = mysqli_fetch_array($result)) {
-        $nombre_usuario = $row['nombre_usuario'];
-        $apellido = $row['apellido_usuario'];
+        $nombre_usuario = $row['nombre'];
+        $apellido = $row['apellido'];
         $correo = $row['correo'];
         $telefono = $row['telefono'];
         $no_tarjeta = $row['no_tarjeta'];

@@ -37,7 +37,7 @@
 					$password = $_POST['password'];
 
 					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($tarjeta) || empty($cvv) || empty($password)){
-						echo "<p class='badge center'> Por favor completa todos los campos</p>";
+						echo "<p class='badge center bg-verde'> Por favor completa todos los campos</p>";
 					}else{
 						include ('conexion.php');
     					$con = Conectarse();
