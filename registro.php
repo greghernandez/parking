@@ -35,11 +35,11 @@
 					$password = $_POST['password'];
 
 					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($tarjeta) || empty($cvv) || empty($password)){
-						echo "<p class='badge center bg-verde'> Por favor completa todos los campos</p>";
+						echo "<p class='badge center bg-rojo'> Por favor completa todos los campos</p>";
 					}else{
 						include ('conexion.php');
     					$con = Conectarse();
-						$qry= "INSERT INTO usuario (nombre_usuario, apellido_usuario, correo, password, telefono, no_tarjeta, cvv_usuario) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$tarjeta}',  '{$cvv}')";
+						$qry= "INSERT INTO usuario (nombre, apellido, correo, password, telefono, no_tarjeta, cvv) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$tarjeta}',  '{$cvv}')";
 
     					echo $qry;
     					$result = $con->query($qry);
