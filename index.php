@@ -1,6 +1,8 @@
 <link rel="stylesheet" type="text/css" href="css/mapa.css">
 <?php
 require 'header.php';
+session_start();
+estaLogeado();
 ?>
 	<div class="nav-title">
 		<span class="title"><img id="p-logo" src="assets/icons/p-white.png">arking</span>	

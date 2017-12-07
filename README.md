@@ -1,4 +1,12 @@
 # parking
 Aplicación para apartar y pagar cajones de estacionamiento
 
-#h3 --Pendientes--
+# --Pendientes--
+
+
+Validar Login
+No mostrar Info cuenta ----------------------- LISTO
+Tickets (mostrar que no hay tickets)
+Agregar coches
+registro coche
+facturas

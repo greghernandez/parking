@@ -2,7 +2,11 @@
 require 'header.php';
 
 session_start();
+estaLogeado();
+
+
 $id_usuario = $_SESSION['user']; /*Remplazar con un session ID*/
+
 include ('conexion.php');
     $con = Conectarse();
     $qry= "SELECT * FROM usuario WHERE num_usuario = $id_usuario;";
@@ -29,6 +33,9 @@ include ('conexion.php');
 </div>
 </div>
     <div id="contenedor">
+    	<div class="card animated bounceInDown">
+    		<a href="cerrar.php">Cerrar Sesión temp</a> 
+    	</div>
     	<div class="card animated bounceInDown">
             <p class="card-title">Información personal:</p>
             <p><span class="bold">Nombre:  </span><input type="text" value="<?php echo $nombre_usuario; ?>" placeholder="Escribe tu nombre"></p> 

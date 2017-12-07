@@ -1,5 +1,7 @@
 <?php
 require 'header.php';
+session_start();
+estaLogeado();//El usuario esta logeado
 ?>
 	<div class="nav-title">
 		<span class="title big">Exteder Tiempo</span>	

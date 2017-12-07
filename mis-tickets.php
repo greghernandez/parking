@@ -1,5 +1,7 @@
     <?php
     require 'header.php';
+    session_start();
+    estaLogeado();//El usuario esta logeado
     if(isset($_GET['Tiempo'])){
     $tiempo=$_GET['Tiempo'];
     $locacion=$_GET['locacion'];

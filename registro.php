@@ -1,3 +1,8 @@
+<?php
+	require 'funciones.php';
+	session_start();
+    estaLogeado();//El usuario esta logeado
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,6 +26,7 @@
 		</div>
 		<div class="form-reg">
 			<?php
+				
 				if(isset($_POST['submit'])){
 					$nombre = $_POST['nombre'];
 					$apellidos = $_POST['apellidos'];

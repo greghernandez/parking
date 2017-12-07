@@ -6,8 +6,9 @@ require 'header.php';
 	</div>
 </div>
 </div>
-<?php 
+<?php
     session_start();
+    estaLogeado();//El usuario esta logeado
     $id_usuario = $_SESSION['user']; /*Remplazar con un session ID*/
     include ('conexion.php');
     $con = Conectarse();
