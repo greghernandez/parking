@@ -4,7 +4,7 @@
     estaLogeado();//El usuario esta logeado
     if(isset($_GET['Tiempo'])){
     $tiempo=$_GET['Tiempo'];
-    $locacion=$_GET['locacion'];
+    $locacion=$_GET['id_parq'];
     switch ($tiempo) {
         case 0.15:?>
             <?php
@@ -109,7 +109,7 @@ if($hora<10){
         <!--Contenedor-->
         <div class="cont-tabs">
             <div class="card animated bounceInDown">
-                <p class="card-title">Parkimetro #54</p>
+                <p class="card-title">Parkimetro #<?php echo $locacion ?></p>
                 <div class="ticket-cont">
                     <div class="icon-ticket">
                         <img class="img-ticket" src="assets/icons/parkimeter.png" alt="">
@@ -130,7 +130,7 @@ if($hora<10){
                     </div>
                 </div>
                     <div class="col-12 center">
-                        <a class="btn bg-verde center" href="ticket.php">Extender Tiempo</a>
+                        <a class="btn bg-verde center" href="ticket.php?id=<?php echo $locacion ?>">Extender Tiempo</a>
                     </div>
 
             </div>

@@ -48,13 +48,13 @@ function posicionUsuario(coordenadas){
                 
         ?>
           latitud = parseFloat(<?php echo $value['latitud']?>);
-          longi = parseFloat(<?php echo $value['longi']?>);
+          longitud = parseFloat(<?php echo $value['longitud']?>);
         
         var marker = new google.maps.Marker({
-            position:{lat: latitud,lng: -longi},
+            position:{lat: latitud,lng: -longitud},
             icon: "assets/icons/locationp.png",
             map: map,
-            url: "lugar.php?locacion=<?php echo $value['locacion'];?>"
+            url: "lugar.php?id_parq=<?php echo $value['id_parq'];?>"
         });
         google.maps.event.addListener(marker, 'click', function() {
             window.location.href = this.url;
