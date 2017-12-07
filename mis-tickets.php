@@ -89,6 +89,13 @@ if($hora<10){
                 localStorage.setItem('locacion',locacion);
             </script>
         <?php
+    }else{
+        include ('conexion.php');
+        $con = Conectarse();
+        $qry1 = "SELECT `id_parq` FROM `realiza_parq` WHERE no_usuario = '{$_SESSION['user']}'";
+        $result1 = $con->query($qry1);
+        $locacion = $result1->fetch_assoc()['id_parq'];
+        
     }
     ?>
         <div class="nav-title">
@@ -153,6 +160,7 @@ function parar () {
         $con = Conectarse();
         $qry = "UPDATE  parquimetro SET estado=1 WHERE locacion= '{$locacion}'";
         mysqli_query($con, $qry);
+                    
     ?>
     alert("Se termino tu tiempo.");
 }

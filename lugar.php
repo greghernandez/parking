@@ -1,4 +1,5 @@
   <?php
+    session_start();
     require 'header.php';
     $id_parq = $_GET['id_parq'];
     ?>
@@ -39,7 +40,9 @@
                                 $qry1 = "UPDATE  parquimetro SET estado=0 WHERE id_parq= '{$id_parq}'";
                                 mysqli_query($con, $qry1);
                                 $qry2 = "INSERT INTO `pago_parq`( `monto`, `fecha`, `h_inicio`, `h_salida`, `id_parq`) VALUES ('{$monto}','{$fecha}','{$h}','{$hs}','{$id_parq}')";
-                               mysqli_query($con, $qry2);
+                                mysqli_query($con, $qry2);
+                                $qry3 = "INSERT INTO `realiza_parq`(`no_usuario`, `id_parq`) VALUES ('{$_SESSION['user']}','{$id_parq}');";
+                                mysqli_query($con, $qry3);
                           }
  		                    }
                         ?>
