@@ -47,8 +47,8 @@ require 'header.php';
         </div>
         <div class="card animated bounceInDown center">
             <p class="card-title">Coches</p>
-            <a href="" class="btn bg-verde">Agregar Coche</a>
-            <a href="" class="btn bg-verde">Administrar Coches</a>
+            <a href="coches.php?opcion=agregar" class="btn bg-verde">Agregar Coche</a>
+            <a href="coches.php?opcion=administrar" class="btn bg-verde">Administrar Coches</a>
         </div>
 
     </div>
