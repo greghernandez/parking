@@ -69,11 +69,12 @@
                     tarifa=<?php echo $rows[0]['tarifa']; ?>;
                     localStorage.setItem('tarifa',tarifa);
                     time =document.getElementById('opc').value;
-                    montot=parseInt(tarifa);
+                    
                     function monto (){
-                        
-                        alert(montot);
-                        document.getElementById('monto').innerHTML = "Total: $" + montot + "MXN";
+                        time =document.getElementById('opc').value;
+                        montot=parseInt(tarifa)*parseFloat(time);
+                        document.getElementById('monto').innerHTML = "Total: $" + montot + " MXN";
+                        localStorage.setItem('total',montot);
                     }
                     
                 </script>

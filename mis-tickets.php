@@ -85,14 +85,6 @@ if($hora<10){
                 localStorage.setItem('minutos',minutos);
                 localStorage.setItem('horas',horas);
                 localStorage.setItem('locacion',locacion);
-                if(horas==0){
-                    horas=1;
-                }
-                if(minutos==0){
-                    minutos=1;
-                }
-                total=15*horas*(minutos/60);
-                localStorage.setItem('total',total);
             </script>
         <?php
     }
