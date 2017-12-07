@@ -470,3 +470,13 @@ input{
 #total{
     font-size: 1.4em;
 }
+#opc{
+    font-size: 1.4em;
+}
+#icon-l{
+    margin-left: 50px;
+    margin-right: -20px;
+}
+#tp{
+    position: relative;
+}

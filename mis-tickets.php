@@ -91,7 +91,7 @@ if($hora<10){
                 if(minutos==0){
                     minutos=1;
                 }
-                total=15*horas*(minutos/10);
+                total=15*horas*(minutos/60);
                 localStorage.setItem('total',total);
             </script>
         <?php
@@ -123,7 +123,7 @@ if($hora<10){
                     <div class="col-4 center">
                         <p><span class="bold">Zona: </span>Centro</p>
                         <p><span class="bold">Calle: </span>Av. Juarez</p>
-                        <p><span class="bold" id="total">Total: $</span><script>document.write(localStorage.getItem('total'))</script> MXN</p>
+                        <p><span class="bold" id="total">Total: $<script>document.write(localStorage.getItem('total'))</script> MXN</span></p>
                     </div>
                     <div class="col-4 center">
                         <p class="bold">Tiempo Restante: <br> <span class="time">
@@ -145,7 +145,7 @@ if($hora<10){
 <script>
 window.addEventListener('load', inicio, true)
 var centesimas = 0;
-var segundos = 5;
+var segundos = 0;
 var minutos = localStorage.getItem('minutos');
 var horas = localStorage.getItem('horas');
 function inicio () {
@@ -170,7 +170,7 @@ function cronometro () {
 	if ( (centesimas == 0)&&(segundos == 0)&&(minutos == 0) ) {
 		horas=horas-1;
         localStorage.setItem('horas',horas);
-		minutos= 61;
+		minutos= 60;
 		if (horas < 10) { horas = "0"+horas }
 		Horas.innerHTML = horas;
 	}
@@ -180,7 +180,7 @@ function cronometro () {
 	if ( (centesimas == 0)&&(segundos == 0) ) {
 		minutos = minutos-1;
         localStorage.setItem('minutos',minutos);
-		segundos=5;
+		segundos=60;
 		
 		if (minutos < 10) { minutos = "0"+minutos }
 		Minutos.innerHTML = ":"+minutos;

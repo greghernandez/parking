@@ -12,7 +12,7 @@
             <div class="card animated bounceInDown">
                 <p class="card-title">Parkimetro #10</p>
                 <div class="ticket-cont">
-                    <div class="icon-ticket">
+                    <div class="icon-ticket" id="icon-l">
                         <img class="img-ticket" src="assets/icons/parkimeter.png" alt="">
                     </div>
                     <div class="col-4 center">
@@ -36,18 +36,13 @@
                         
                         <p><span class="bold">Zona: </span><?php echo $rows[0]['colonia'];?></p>
                         <p><span class="bold">Calle: </span><?php echo $rows[0]['calle'];?></p>
+                        <p><span class="bold">Tarifa p/h: $</span><?php echo $rows[0]['tarifa'];?> MXN</p>
+                        </div>
                     </div>
-                       
-                    <div class="col-4 center">
-                        <p class="bold">¿Cuanto tiempo desea apartar? <br></p>
-                      
-                        
-                    </div>
-                </div>
-                <form  action="mis-tickets.php" method="GET"> 
-                  <label><select  name="Tiempo" >
-		                  <option id="time" value="0.15">15 minutos</option>
-		                  <option id="time" value="0.30">30 minutos</option>
+                <form action="mis-tickets.php" method="GET"> 
+                  <center><label >¿Cuanto tiempo desea apartar? <select id="opc" name="Tiempo" >
+		                  <option value="0.15" selected>15 minutos</option>
+		                  <option value="0.30">30 minutos</option>
 		                  <option value="0.45">45 minutos</option>
 		                  <option value="1">1 hora</option>
                           <option value="1.15">1 h. 15 minutos</option>
@@ -62,13 +57,25 @@
 		                  <option value="3.30">3 h. 30 minutos</option>
 		                  <option value="3.45">3 h. 45 minutos</option>
 		                  <option value="4">4 hora</option>
-	                   </select></label>
+	                   </select></label></center>
+                    
+                    <br><center><p><span class="bold" id="monto">Total: $0 MXN</span></p></center>
                     <div class="col-12 center">
                         <button class="btn bg-verde center" name="locacion" value="<?php echo $locacion; ?>"> Realizar Pago</button>
                     </div>
                 </form>
-                                <script>
-                    time =document.getElementById('time').value;
+                <script>
+                    window.addEventListener('click', monto);
+                    tarifa=<?php echo $rows[0]['tarifa']; ?>;
+                    localStorage.setItem('tarifa',tarifa);
+                    time =document.getElementById('opc').value;
+                    montot=parseInt(tarifa);
+                    function monto (){
+                        
+                        alert(montot);
+                        document.getElementById('monto').innerHTML = "Total: $" + montot + "MXN";
+                    }
+                    
                 </script>
             </div>
         </div>

@@ -22,27 +22,44 @@ require 'header.php';
     		</div>
             <div class="center">
                 <p class="bold">Monto Actual:</p>
-                <p>$<script>document.write(localStorage.getItem('total'))</script> MXN</p>
+                <p class="monto">$<script>document.write(localStorage.getItem('total'))</script> MXN</p>
             </div>
             <hr>
             <div class="center">
                 <p class="bold">Extender tiempo</p>
             </div>
             <div class="center">
-                <input class="num-time" type="number" min="0" step="15"value="15">
+                <input id="num" class="num-time" type="number" min="0" step="15"value="">
             </div>
             <div class="center">
-                <a href="" class="btn btn-large bg-verde center">Realizar Pago</a>
+                <button onclick="actualizar()" href="" class="btn btn-large bg-verde center">Realizar Pago</button>
             </div>
     	</div>
     </div>
-
-<script>
-window.addEventListener('load', inicio, true)
+<?php ?>
+<script>    
 var centesimas = 0;
-var segundos = 5;
+var segundos = 0;
 var minutos = localStorage.getItem('minutos');
 var horas = localStorage.getItem('horas');
+window.addEventListener('load', inicio, true);
+function actualizar (){
+    var total= localStorage.getItem('total');
+    num= document.getElementById('num').value;
+    minutos=parseInt(minutos)+ parseInt(num);
+    if(minutos>60){
+        minutos=minutos-60;
+        horas=horas+1;
+    }
+    document.querySelector('#Minutos').innerHTML =":"+ minutos;
+    document.querySelector('#Horas').innerHTML = horas;
+    tarifa = localStorage.getItem('tarifa');
+    var total= parseInt(total)+parseInt(tarifa*(num/60));
+    localStorage.setItem('total',total);
+    document.querySelector('.monto').innerHTML = "$" + total + "MXN";
+}    
+
+
 function inicio () {
 	control = setInterval(cronometro,10);
 }
@@ -65,7 +82,7 @@ function cronometro () {
 	if ( (centesimas == 0)&&(segundos == 0)&&(minutos == 0) ) {
 		horas=horas-1;
         localStorage.setItem('horas',horas);
-		minutos= 61;
+		minutos= 60;
 		if (horas < 10) { horas = "0"+horas }
 		Horas.innerHTML = horas;
 	}
@@ -75,7 +92,7 @@ function cronometro () {
 	if ( (centesimas == 0)&&(segundos == 0) ) {
 		minutos = minutos-1;
         localStorage.setItem('minutos',minutos);
-		segundos=5;
+		segundos=60;
 		
 		if (minutos < 10) { minutos = "0"+minutos }
 		Minutos.innerHTML = ":"+minutos;
