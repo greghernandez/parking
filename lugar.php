@@ -39,7 +39,7 @@
                         
                     </div>
                 </div>
-                <form  action="" method="GET"> 
+                <form  action="mis-tickets.php" method="GET"> 
                   <label><select  name="Tiempo" >
 		                  <option id="time" value="0.15">15 minutos</option>
 		                  <option id="time" value="0.30">30 minutos</option>
@@ -58,20 +58,21 @@
 		                  <option value="3.45">3 h. 45 minutos</option>
 		                  <option value="4">4 hora</option>
 	                   </select></label>
-                <script>
+                    <div class="col-12 center">
+                        <button class="btn bg-verde center" name="locacion" value="<?php echo $locacion; ?>"> Apartar</button>
+                    </div>
+                </form>
+                                <script>
                     time =document.getElementById('time').value;
                 </script>
                     <?php 
-                          if(isset($_GET['sesion'])){
-                          $time = "<script>document.write(time) </script>";
-                          echo $qry1 = "UPDATE  parquimetro SET estado=0 WHERE locacion= '{$locacion}'";
+                $time = 2;
+                          if(isset($_GET['aparta'])){
+                          echo $locacion;
+                          echo $qry1 = "UPDATE  parquimetro SET estado=0 WHERE locacion= '{$_GET['locacion']}'";
                           mysqli_query($con, $qry1);
                           }
                     ?>
-                    <div class="col-12 center">
-                        <a class="btn bg-verde center" href="ticket.php"><div name="sesion">Apartar</div></a>
-                    </div>
-                </form>
             </div>
         </div>
     <?php

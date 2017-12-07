@@ -29,7 +29,14 @@
                         <p><span class="bold">Calle: </span>Av. Juarez</p>
                     </div>
                     <div class="col-4 center">
-                        <p class="bold">Tiempo Restante: <br> <span class="time">53:04</span></p>
+                        <p class="bold">Tiempo Restante: <br> <span class="time">
+                            <div class="cont-reloj">
+                            <div class="reloj" id="Horas">00</div>
+		                    <div class="reloj" id="Minutos">:00</div>
+		                    <div class="reloj" id="Segundos">:00</div>
+                            </div>
+                            
+                            </span></p>
                     </div>
                 </div>
                     <div class="col-12 center">
