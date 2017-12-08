@@ -34,7 +34,7 @@ include ('conexion.php');
 </div>
     <div id="contenedor">
     	<div class="card animated bounceInDown">
-    		<a class="bold" href="cerrar.php">Cerrar Sesión temp</a>
+    		<a class="bold" href="cerrar.php">Cerrar Sesión</a>
             <!--<img src="assets/icons/logout.png" alt="">-->
     	</div>
     	<div class="card animated bounceInDown">

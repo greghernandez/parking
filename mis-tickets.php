@@ -156,8 +156,6 @@ function parar () {
 	clearInterval(control);
     <?php
         $locacion="document.write(localStorage.getItem('locacion'))";
-        include ('conexion.php');
-        $con = Conectarse();
         $qry = "UPDATE  parquimetro SET estado=1 WHERE locacion= '{$locacion}'";
         mysqli_query($con, $qry);
                     

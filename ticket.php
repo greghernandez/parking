@@ -51,7 +51,7 @@ function actualizar (){
     minutos=parseInt(minutos)+ parseInt(num);
     if(minutos>60){
         minutos=minutos-60;
-        horas=horas+1;
+        horas=parseInt(horas)+1;
     }
     document.querySelector('#Minutos').innerHTML =":"+ minutos;
     document.querySelector('#Horas').innerHTML = horas;
@@ -59,6 +59,8 @@ function actualizar (){
     var total= parseInt(total)+parseInt(tarifa*(num/60));
     localStorage.setItem('total',total);
     document.querySelector('.monto').innerHTML = "$" + total + "MXN";
+    localStorage.setItem('minutos',minutos);
+    localStorage.setItem('horas',horas);
 }    
 
 
