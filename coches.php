@@ -65,10 +65,25 @@ switch ($opcion) {
 		<?php
 		break;
 	case 'administrar':
+		include ('conexion.php');
+    	$con = Conectarse();
+		$qry= "SELECT * FROM auto WHERE id_usuario = '".$_SESSION['user']."'";
+    	$result = $con->query($qry);  
+
+   		while ($row = mysqli_fetch_array($result)){  
+   			?>
+   			<div class="card animated bounceInDown">
+				<div class="col-6">
+					<p><span class="bold">Modelo: </span><?php echo $row['modelo'];?></p>
+					<p><span class="bold">Placa: </span><?php echo $row['placa'];?></p>
+					<p>Estado: <?php echo $row['estado'];?></p>
+					<button class="btn bg-verde" type="">Activar</button>
+					<button class="btn bg-azul" type="">Editar</button>
+   				</div>
+			</div>
+   			<?php
+		}  
 		?>
-		<div class="card animated bounceInDown">
-			
-		</div>
 		<?php
 		break;
 	

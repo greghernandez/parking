@@ -4,9 +4,10 @@ Aplicación para apartar y pagar cajones de estacionamiento
 # --Pendientes--
 
 
-Validar Login
-No mostrar Info cuenta ----------------------- LISTO
+
 Tickets (mostrar que no hay tickets)
-Agregar coches
-registro coche
+editar coches (eliminar, activar, editar)
+mi cuenta(editar info de usuario)
+tabs(cabiar de tab y tab activo)
+registro coche necesario
 facturas
