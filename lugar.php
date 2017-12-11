@@ -43,8 +43,12 @@
                                 //guarda el pago
                                 $qry2 = "INSERT INTO `pago_parq`( `monto`, `fecha`, `h_inicio`, `h_salida`, `id_parq`) VALUES ('{$monto}','{$fecha}','{$h}','{$hs}','{$id_parq}')";
                                 mysqli_query($con, $qry2);
-                                $qry3 = "INSERT INTO `realiza_parq`(`no_usuario`, `id_parq`) VALUES ('{$_SESSION['user']}','{$id_parq}');";
+                                //sacar el id de pago guardado
+                                $qry3  = "SELECT id_pago FROM pago_parq WHERE monto = '{$monto}' and fecha = '{$fecha}' and h_inicio = '{$h}' and h_salida = '{$hs}' and id_parq = '{$id_parq}'";
                                 mysqli_query($con, $qry3);
+
+                                $qry4 = "INSERT INTO `realiza_parq`(`no_usuario`, `id_parq`) VALUES ('{$_SESSION['user']}','{$id_parq}');";
+                                mysqli_query($con, $qry4);
                           }
  		                    }
                         ?>
