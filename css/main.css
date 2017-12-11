@@ -90,6 +90,9 @@ Navbar
   background-color: #0078a7;
   color: #FFFFFF;
 }
+.act-tab{
+  border-bottom: 1px solid #0078a7 !important;
+}
 
 .cont-tabs{
   width: 100%;

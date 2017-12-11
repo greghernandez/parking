@@ -105,16 +105,16 @@ if($hora<10){
     </div>
         <!--Tabs-->
         <div class="tabs">
-            <button class="tab-opt">
+            <button id="btn-act" class="tab-opt" onclick="openTab('activos');">
                 Activos
             </button>
-            <button class="tab-opt">
+            <button id="btn-hist" class="tab-opt" onclick="openTab('historial');">
                 Historial
             </button>
         </div>
         
         <!--Contenedor-->
-        <div class="cont-tabs">
+        <div id="activos" class="cont-tabs">
             <div class="card animated bounceInDown">
                 <p class="card-title">Parkimetro #<?php echo $locacion ?></p>
                 <div class="ticket-cont">
@@ -142,6 +142,9 @@ if($hora<10){
 
             </div>
             
+        </div>
+        <div id="historial" class="cont-tabs" style="display: none;">
+            <div class="card animated bounceInDown"></div>
         </div>
 <script>
 window.addEventListener('load', inicio, true)
@@ -203,6 +206,21 @@ function cronometro () {
 
 
 
+}
+</script>
+<script>
+function openTab(tabName) {
+    var d = document.getElementById("btn-act");
+    var b = document.getElementById("btn-hist");
+    if (tabName == 'activos') {
+        document.getElementById('activos').style.display = "block";
+        //d.className += " act-tab";
+        document.getElementById('historial').style.display = "none";
+    }else{
+        document.getElementById('activos').style.display = "none";
+        document.getElementById('historial').style.display = "block"
+        //b.className += " act-tab";
+    }
 }
 </script>
     <?php
