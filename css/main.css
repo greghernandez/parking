@@ -303,7 +303,7 @@ botones
   /*background-color: #ff00008c;*/
   border-radius: 25px;
   display: block;
-  margin: auto;
+  margin: auto auto 5px auto;
   padding: 3px;
   box-sizing: border-box;
 }
