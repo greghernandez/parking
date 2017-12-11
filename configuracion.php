@@ -33,7 +33,7 @@ include ('conexion.php');
 </div>
 </div>
     <div id="contenedor">
-    	<div class="card animated bounceInDown">
+    	<div class="card animated bounceInDown center">
     		<a class="bold" href="cerrar.php">Cerrar Sesión</a>
             <!--<img src="assets/icons/logout.png" alt="">-->
     	</div>
@@ -44,15 +44,19 @@ include ('conexion.php');
             <hr>
             <p><span class="bold">Email:  </span><input type="email" value="<?php echo $correo; ?>" placeholder="Escribe tu email"></p>
             <p><span class="bold">Teléfono:  </span><input type="text" value="<?php echo $telefono; ?>" placeholder="Escribe tu Teléfono"></p>
+            <button class="btn bg-verde btn-large">Guardar cambios</button>
     	</div>
+        <!--
         <div class="card animated bounceInDown">
             <p class="card-title">Coche:</p>
             <p><span class="bold">Modelo:  </span><?php echo $modelo ?></p>
             <p><span class="bold">Placa:  </span><?php echo $placa ?></p>
-        </div>
+        </div>-->
         <div class="card animated bounceInDown">
             <p class="card-title">Contraseña:</p>
-            <p></p>
+            <input type="password" name="passActual" placeholder="Ingresa tu contraseña actual">
+            <input type="password" name="passNueva" placeholder="Ingresa la nueva contraseñas">
+            <button class="btn bg-verde btn-large"> Actualizar contraseña</button>
         </div>
     </div>
 <?php

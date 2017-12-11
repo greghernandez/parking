@@ -1,8 +1,4 @@
-function showUser(str) {
-    if (str == "") {
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-    } else { 
+function activarCoche(str) { 
         if (window.XMLHttpRequest) {
             // code for IE7+, Firefox, Chrome, Opera, Safari
             xmlhttp = new XMLHttpRequest();
@@ -12,10 +8,9 @@ function showUser(str) {
         }
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("txtHint").innerHTML = this.responseText;
+                alert('El coche con numero de placa ' + str + '  fue activado')
             }
         };
-        xmlhttp.open("GET","getuser.php?q="+str,true);
+        xmlhttp.open("GET","coches.php?opcion=activar&placa="+str,true);
         xmlhttp.send();
-    }
 }
