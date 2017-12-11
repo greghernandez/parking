@@ -56,7 +56,7 @@ function posicionUsuario(coordenadas){
             position:{lat: latitud,lng: -longitud},
             icon: "assets/icons/locationp.png",
             map: map,
-            url: "lugar.php?id_parq=<?php echo $value['id_parq'];?>"
+            url: "lugar.php?id_parq=<?php echo $value['id_parq'];?>&lugar=parq"
         });
         google.maps.event.addListener(marker, 'click', function() {
             window.location.href = this.url;
@@ -72,12 +72,11 @@ function posicionUsuario(coordenadas){
         ?>
           latitud = parseFloat(<?php echo $value['latitud']?>);
           longitud = parseFloat(<?php echo $value['longitud']?>);
-        
         var marker = new google.maps.Marker({
             position:{lat: latitud,lng: -longitud},
             icon: "assets/icons/locatione.png",
             map: map,
-            url: "est.php?id_est=<?php echo $value['id_est'];?>&nom=<?php echo $value['nom_plaza'];?>"
+            url: "est.php?id_est=<?php echo $value['id_est'];?>&nom=<?php echo $value['nom_plaza'];?>&lugar=est"
         });
         google.maps.event.addListener(marker, 'click', function() {
             window.location.href = this.url;
