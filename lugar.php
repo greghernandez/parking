@@ -19,7 +19,7 @@
                     </div>
                     <div class="col-4 center">
                         <?php 
-                            
+                            //conexion con la bd
                             include ('conexion.php');
                             $con = Conectarse();
                             $qry= "SELECT * FROM parquimetro WHERE id_parq = '{$id_parq}';";
@@ -27,7 +27,7 @@
                             $rows;
                             $monto=22.5;
                             $hoy = getdate();
-
+                            //datos para fecha
                             $d = $hoy['mday'];
                             $m = $hoy['mon'];
                             $y = $hoy['year'];
@@ -37,8 +37,10 @@
  		                    while ($row=$result->fetch_assoc()) {
  		                    	$rows[]=$row;
                             if(isset($_GET['id_parq'])){
+                                //actualiza el estado del parquietro
                                 $qry1 = "UPDATE  parquimetro SET estado=0 WHERE id_parq= '{$id_parq}'";
                                 mysqli_query($con, $qry1);
+                                //guarda el pago
                                 $qry2 = "INSERT INTO `pago_parq`( `monto`, `fecha`, `h_inicio`, `h_salida`, `id_parq`) VALUES ('{$monto}','{$fecha}','{$h}','{$hs}','{$id_parq}')";
                                 mysqli_query($con, $qry2);
                                 $qry3 = "INSERT INTO `realiza_parq`(`no_usuario`, `id_parq`) VALUES ('{$_SESSION['user']}','{$id_parq}');";
@@ -78,6 +80,7 @@
                     </div>
                 </form>
                 <script>
+                    //actualiza el pago en la pantalla
                     window.addEventListener('click', monto);
                     tarifa=<?php echo $rows[0]['tarifa']; ?>;
                     localStorage.setItem('tarifa',tarifa);

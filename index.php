@@ -23,13 +23,14 @@ function geolocalizar(){
         navigator.geolocation.getCurrentPosition(posicionUsuario);
     }
 }
-        
+ //Guarda la ubicacion del usuario       
 function posicionUsuario(coordenadas){
     latUser= coordenadas.coords.latitude;
     longUser= coordenadas.coords.longitude; 
     localStorage.setItem('latUser',latUser);
     localStorage.setItem('longUser',longUser);
 }
+    //dibuja el mapa con la posición del usuario
       function initAutocomplete() {
         lat = localStorage.getItem('latUser');
         long = localStorage.getItem('longUser');
@@ -39,6 +40,7 @@ function posicionUsuario(coordenadas){
           mapTypeId: 'roadmap',
           disableDefaultUI: true
         });
+          //saca las ubicacion de los parquimetros para poderlas dibujar en el mapa
         <?php
             include ('conexion.php');
             $con = Conectarse();
@@ -55,6 +57,27 @@ function posicionUsuario(coordenadas){
             icon: "assets/icons/locationp.png",
             map: map,
             url: "lugar.php?id_parq=<?php echo $value['id_parq'];?>"
+        });
+        google.maps.event.addListener(marker, 'click', function() {
+            window.location.href = this.url;
+        });
+        <?php } ?>
+          
+        //saca las ubicacion de los estacionamientos para poderlas dibujar en el mapa
+        <?php
+            $qry2= "SELECT * FROM estacionamiento;";
+            $result = $con->query($qry2);
+            foreach ($result as $key => $value) {
+                
+        ?>
+          latitud = parseFloat(<?php echo $value['latitud']?>);
+          longitud = parseFloat(<?php echo $value['longitud']?>);
+        
+        var marker = new google.maps.Marker({
+            position:{lat: latitud,lng: -longitud},
+            icon: "assets/icons/locatione.png",
+            map: map,
+            url: "est.php?id_est=<?php echo $value['id_est'];?>&nom=<?php echo $value['nom_plaza'];?>"
         });
         google.maps.event.addListener(marker, 'click', function() {
             window.location.href = this.url;
