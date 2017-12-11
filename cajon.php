@@ -45,6 +45,9 @@ while ($row=$result->fetch_assoc()) {
                                 //guarda el pago
                                 $qry2 = "INSERT INTO `pago_est`( `monto`, `fecha`, `h_inicio`, `h_salida`, `id_est`) VALUES ('{$monto}','{$fecha}','{$h}','{$hs}','{$id_est}')";
                                 mysqli_query($con, $qry2);
+                                $qry4 = "SELECT `id_pago` FROM `pago_est` WHERE no_usuario = '{$_SESSION['user']}'";
+                                $result4 = $con->query($qry4);
+                                $locacion = $result4->fetch_assoc()['id_parq'];
                                 $qry3 = "INSERT INTO `realiza_est`(`no_usuario`, `id_pago`) VALUES ('{$_SESSION['user']}','{$id_pago}');";
                                 mysqli_query($con, $qry3);
                           }
