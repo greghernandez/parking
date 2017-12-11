@@ -5,7 +5,7 @@ session_start();
 estaLogeado();//El usuario esta logeado
 //busca y guarda los datos de la plaza
 $id_est = $_GET['id_est'];
-$id_caj= $_GET['id_caj'];
+$id_caj = $_GET['id_caj'];
 $con = Conectarse();
 $qry= "SELECT * FROM estacionamiento WHERE id_est = '{$id_est}';";
 $result = $con->query($qry);
@@ -13,28 +13,22 @@ $rows;
 while ($row=$result->fetch_assoc()) {
     $rows[]=$row;
 }
-$qry2= "SELECT * FROM cajones WHERE id_caj = '{$id_caj}';";
-$result = $con->query($qry2);
-$cajones;
-while ($cajon=$result->fetch_assoc()) {
-    $cajones[]=$cajon;
-}
 ?>
 	<div class="nav-title">
 		<span class="title big"><?php echo $rows[0]['nom_plaza'] ?></span>	
 	</div>
 </div>
 </div>
-      <div class="cont-tabs">
+
+<div class="cont-tabs">
             <div class="card animated bounceInDown">
-                <p class="card-title">Cajón #<?php echo $cajones[0]['num'] ?></p>
+                <p class="card-title">Cajón #<?php echo $id_caj ?></p>
                 <div class="ticket-cont">
                     <div class="icon-ticket" id="icon-l">
                         <img class="img-ticket" src="assets/icons/parkimeter.png" alt="">
                     </div>
                     <div class="col-4 center">
                         <?php 
-                            //conexion con la b
                             $monto=22.5;
                             $hoy = getdate();
                             //datos para fecha
@@ -46,20 +40,20 @@ while ($cajon=$result->fetch_assoc()) {
                             $hs=5;
                             if(isset($_GET['id_parq'])){
                                 //actualiza el estado del parquietro
-                                $qry4 = "UPDATE  cajones SET estado=0 WHERE id_caj= '{$id_caj}'";
-                                mysqli_query($con, $qry4);
+                                $qry1 = "UPDATE  estacionamiento SET estado=0 WHERE id_est= '{$id_est}'";
+                                mysqli_query($con, $qry1);
                                 //guarda el pago
-                                $qry5 = "INSERT INTO `pago_est`( `monto`, `fecha`, `h_inicio`, `h_salida`, `id_est`) VALUES ('{$monto}','{$fecha}','{$h}','{$hs}','{$id_parq}')";
-                                mysqli_query($con, $qry5);
-                                $qry6 = "INSERT INTO `realiza_est`(`no_usuario`, `id_est`) VALUES ('{$_SESSION['user']}','{$id_est}');";
-                                mysqli_query($con, $qry6);
+                                $qry2 = "INSERT INTO `pago_est`( `monto`, `fecha`, `h_inicio`, `h_salida`, `id_est`) VALUES ('{$monto}','{$fecha}','{$h}','{$hs}','{$id_est}')";
+                                mysqli_query($con, $qry2);
+                                $qry3 = "INSERT INTO `realiza_est`(`no_usuario`, `id_pago`) VALUES ('{$_SESSION['user']}','{$id_pago}');";
+                                mysqli_query($con, $qry3);
                           }
  		                    
                         ?>
                         <p><span class="bold">Tarifa p/h: $</span><?php echo $rows[0]['tarifa'];?> MXN</p>
                         </div>
                     </div>
-                <form action="mis-tickets.php" method="GET"> 
+                <form action="index.php" method="GET"> 
                   <center><label >¿Cuanto tiempo desea apartar? <select id="opc" name="Tiempo" >
 		                  <option value="0.15" selected>15 minutos</option>
 		                  <option value="0.30">30 minutos</option>
