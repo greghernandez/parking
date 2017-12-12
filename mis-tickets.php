@@ -92,9 +92,12 @@ if($hora<10){
     }else{
         include ('conexion.php');
         $con = Conectarse();
-        $qry1 = "SELECT `id_parq` FROM `realiza_parq` WHERE no_usuario = '{$_SESSION['user']}'";
+        $qry1 = "SELECT `id_pago` FROM `realiza_parq` WHERE no_usuario = '{$_SESSION['user']}'";
         $result1 = $con->query($qry1);
-        $locacion = $result1->fetch_assoc()['id_parq'];
+        $id_pago = $result1->fetch_assoc()['id_pago'];
+        $qry2 = "SELECT `id_parq` FROM `pago_parq` WHERE id_pago = '{$id_pago}'";
+        $result2 = $con->query($qry2);
+        $locacion = $result2->fetch_assoc()['id_parq'];
         
     }
     ?>
@@ -158,9 +161,8 @@ function inicio () {
 function parar () {
 	clearInterval(control);
     <?php
-        $locacion="document.write(localStorage.getItem('locacion'))";
-        $qry = "UPDATE  parquimetro SET estado=1 WHERE locacion= '{$locacion}'";
-        mysqli_query($con, $qry);
+        //$qry = "UPDATE  parquimetro SET estado=1 WHERE id_parq= '{$locacion}'";
+       // mysqli_query($con, $qry);
                     
     ?>
     alert("Se termino tu tiempo.");

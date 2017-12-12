@@ -33,7 +33,7 @@
                             $y = $hoy['year'];
                             $fecha= $y."-".$m."-".$d; 
                             $h=$hoy['hours'];
-                            $hs=5;
+                            $hs=$hoy['hours']+1;
  		                    while ($row=$result->fetch_assoc()) {
  		                    	$rows[]=$row;
                             if(isset($_GET['id_parq'])){
@@ -45,9 +45,10 @@
                                 mysqli_query($con, $qry2);
                                 //sacar el id de pago guardado
                                 $qry3  = "SELECT id_pago FROM pago_parq WHERE monto = '{$monto}' and fecha = '{$fecha}' and h_inicio = '{$h}' and h_salida = '{$hs}' and id_parq = '{$id_parq}'";
-                                mysqli_query($con, $qry3);
+                                $result6 = $con->query($qry3);
+                                $id_pago = $result6->fetch_assoc()['id_pago'];
 
-                                $qry4 = "INSERT INTO `realiza_parq`(`no_usuario`, `id_parq`) VALUES ('{$_SESSION['user']}','{$id_parq}');";
+                                $qry4 = "INSERT INTO `realiza_parq`(`no_usuario`, `id_pago`) VALUES ('{$_SESSION['user']}','{$id_pago}');";
                                 mysqli_query($con, $qry4);
                           }
  		                    }
