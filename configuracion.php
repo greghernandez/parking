@@ -39,12 +39,14 @@ include ('conexion.php');
     	</div>
     	<div class="card animated bounceInDown">
             <p class="card-title">Información personal:</p>
-            <p><span class="bold">Nombre:  </span><input type="text" value="<?php echo $nombre_usuario; ?>" placeholder="Escribe tu nombre"></p> 
-            <p><span class="bold">Apellidos:  </span><input type="text" value="<?php echo $apellido; ?>" placeholder="Escribe tu epellido"></p>
-            <hr>
-            <p><span class="bold">Email:  </span><input type="email" value="<?php echo $correo; ?>" placeholder="Escribe tu email"></p>
-            <p><span class="bold">Teléfono:  </span><input type="text" value="<?php echo $telefono; ?>" placeholder="Escribe tu Teléfono"></p>
-            <button class="btn bg-verde btn-large">Guardar cambios</button>
+            <form action="">
+                <p><span class="bold">Nombre:  </span><input type="text" value="<?php echo $nombre_usuario; ?>" placeholder="Escribe tu nombre"></p> 
+                <p><span class="bold">Apellidos:  </span><input type="text" value="<?php echo $apellido; ?>" placeholder="Escribe tu epellido"></p>
+                <hr>
+                <p><span class="bold">Email:  </span><input type="email" value="<?php echo $correo; ?>" placeholder="Escribe tu email"></p>
+                <p><span class="bold">Teléfono:  </span><input type="text" value="<?php echo $telefono; ?>" placeholder="Escribe tu Teléfono"></p>
+                <button class="btn bg-verde btn-large">Guardar cambios</button>
+            </form>
     	</div>
         <!--
         <div class="card animated bounceInDown">
