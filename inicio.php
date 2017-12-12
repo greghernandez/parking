@@ -33,9 +33,9 @@
         <section>
         <h2>Iniciar Sesion</h2>
         <form  action="" method="POST">
-        <input type="text" placeholder="Correo" id="correoSesion" name="correo">
-        <input type="password" placeholder="Contraseña" id="contrasenaSesion" name="pass_user">
-        <button name="inicio" id="registro-b">Iniciar</button>
+          <input type="email" placeholder="Correo" id="correoSesion" name="correo" required="">
+          <input type="password" placeholder="Contraseña" id="contrasenaSesion" name="pass_user" required="">
+          <button name="inicio" id="registro-b">Iniciar</button>
         </form>
         <button onclick="window.location='registro.php'" >Registrar</button>
         

@@ -57,24 +57,24 @@
 			<form action="#" method="POST">
 				
 				<label class="">Nombre:</label>
-				<input type="text" name="nombre" placeholder="Nombre">
+				<input type="text" name="nombre" placeholder="Nombre" required="">
 				
 				<label for="">Apellidos:</label>
-				<input type="text" name="apellidos" placeholder="Apellidos">
+				<input type="text" name="apellidos" placeholder="Apellidos" required="">
 				<label for="">Email:</label>
-				<input type="email" name="email" placeholder="Email">
+				<input type="email" name="email" placeholder="Email" required="">
 				
 				<label for="">Telefono:</label>
-				<input type="number" name="telefono" placeholder="Telefono">
+				<input type="number" name="telefono" placeholder="Telefono" required pattern="{10,10}">
 				
 				<label for="">Numero de tarjeta:</label>
-				<input type="number" name="tarjeta" placeholder="Numero de tarjeta">
+				<input type="number" name="tarjeta" placeholder="Numero de tarjeta" required="">
 				
 				<label for="">CVV</label>
-				<input type="number" name="cvv" placeholder="CVV">
+				<input type="number" name="cvv" placeholder="CVV" required="">
 
 				<label for="">Pasword</label>
-				<input type="password" name="password" placeholder="password">
+				<input type="password" name="password" placeholder="password" required="">
 				
 				<div class="center ">
 					<button type="submit" value="submit" name="submit" class="btn bg-azul btn-large"> Registrarme</button>
