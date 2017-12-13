@@ -482,6 +482,9 @@ select{
   border: 2px solid #f3f3f3;
   outline: none;
 }
+select:focus {
+    outline: none;
+}
 /*--------------reloj-----------  */
 .cont-reloj{
     margin-left: 30%; 

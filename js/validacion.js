@@ -31,15 +31,13 @@ $().ready(function() {
                 minlength: 9,
                 maxlength: 10
             },
-            telefono: {
-                required: true,
-                minlength: 9,
-                maxlength: 10
-            },
             tarjeta: {
                 required: true,
                 maxlength: 16,
                 minlength: 16
+            },
+            estado: {
+                required: true
             },
             checkBox: {
                 required: true
@@ -81,6 +79,9 @@ $().ready(function() {
             },
             tarjeta: {
                 required: "<span class='errors-class'>Tarjeta</span>"
+            },
+            estado: {
+                required: "<span class='errors-class'>Escribe el estado al que perteneces</span>"
             },
             fecha: {
                 required: "<span class='errors-class'>Debe seleccionar una fecha</span>"
