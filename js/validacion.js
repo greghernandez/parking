@@ -3,7 +3,7 @@ $().ready(function() {
         rules: {
             nombre: {
                 required: true,
-                minlength: 5
+                minlength: 4
             },
             apellidos: {
                 required: true,
@@ -26,6 +26,11 @@ $().ready(function() {
                 required: true,
                 email: true
             },
+            telefono: {
+                required: true,
+                minlength: 10,
+                maxlenght: 10
+            },
             fecha: {
                 required: true
             },
@@ -38,8 +43,8 @@ $().ready(function() {
         },
         messages: {
             nombre: {
-                required: "<span class='errors-class'>Ingrese su puto un nombre</span>",
-                minlength: "<span class='errors-class'>El nombre debe tener a lo menos 5 caracteres</span>"
+                required: "<span class='errors-class'>Ingrese su nombre</span>",
+                minlength: "<span class='errors-class'>El nombre debe tener a lo menos 4 caracteres</span>"
             },
             apellidos: {
                 required: "<span class='errors-class'>Ingrese sus apellidos</span>",
@@ -61,6 +66,10 @@ $().ready(function() {
             email: {
                 required: "<span class='errors-class'>Debe ingresar un Email</span>",
                 email: "<span class='errors-class'>Debe ingresar un correo valido</span>"
+            },
+            telefono: {
+                required: "<span class='errors-class'>Debe ingresar un teléfono de 10 dígitos</span>",
+                minlength: "<span class='errors-class'>El teléfono tiene que tener 10 dígitos</span>"            
             },
             fecha: {
                 required: "<span class='errors-class'>Debe seleccionar una fecha</span>"

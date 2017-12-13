@@ -306,6 +306,10 @@ botones
   padding: 3px;
   box-sizing: border-box;
 }
+.errors-class{
+  font-size: .8em;
+  color: #ff00008c;
+}
 /*
 colores
 */

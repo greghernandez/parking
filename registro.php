@@ -15,6 +15,9 @@
   	<!-- or -->
   	<link rel="stylesheet"
   	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  	<script src="js/jQuery.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/validacion.js"></script>
 </head>
 <body>
 
@@ -54,7 +57,7 @@
 
 				}
 			?>
-			<form action="#" method="POST">
+			<form action="#" method="POST" id="form-to-valid">
 				
 				<label class="">Nombre:</label>
 				<input type="text" name="nombre" placeholder="Nombre" required="">
@@ -65,7 +68,7 @@
 				<input type="email" name="email" placeholder="Email" required="">
 				
 				<label for="">Telefono:</label>
-				<input type="number" name="telefono" placeholder="Telefono" required pattern="{10,10}">
+				<input type="number" name="telefono" placeholder="Telefono" required>
 				
 				<label for="">Numero de tarjeta:</label>
 				<input type="number" name="tarjeta" placeholder="Numero de tarjeta" required="">
