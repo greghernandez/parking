@@ -79,17 +79,17 @@
 				<p class="center">Datos Fiscales</p>
 
 				<label for="">Estado:</label>
-				<input type="text">
-				
+				<input type="text" name="estado" placeholder="Estado">
+
 				<label for="">Municipio:</label>
-				<input type="text">
-				
+				<input type="text" name="municipio" placeholder="Municipio">
+
 				<label for="">CP:</label>
-				<input type="text">
-				
+				<input type="text" name="cp" placeholder="CP">
+
 				<label for="">RFC:</label>
-				<input type="text">
-				
+				<input type="text" name="rfc" placeholder="RFC	">
+
 
 				<hr>
 				<p class="center">Metodo de pago:</p>
@@ -99,6 +99,12 @@
 				
 				<label for="">CVV</label>
 				<input type="number" name="cvv" placeholder="CVV" required="">
+
+				<label for=""></label>
+				<select name="" id="">
+					<option value="credito">Credito</option>
+					<option value="debito">Debito</option>
+				</select>
 				
 				<div class="center ">
 					<button type="submit" value="submit" name="submit" class="btn bg-azul btn-large"> Registrarme</button>
