@@ -39,6 +39,19 @@ $().ready(function() {
             estado: {
                 required: true
             },
+            municipio: {
+                required: true
+            },
+            cp: {
+                required: true,
+                maxlength: 5,
+                minlength: 5
+            },
+            rfc: {
+                required: true,
+                maxlength: 13,
+                minlength: 12
+            },
             checkBox: {
                 required: true
             },
@@ -82,6 +95,19 @@ $().ready(function() {
             },
             estado: {
                 required: "<span class='errors-class'>Escribe el estado al que perteneces</span>"
+            },
+            municipio: {
+                required: "<span class='errors-class'>Escribe el municipio al que perteneces</span>"
+            },
+            cp: {
+                required: "<span class='errors-class'>Escribe tu código postal</span>",
+                minlength: "<span class='errors-class'>El código postal esta conformado por 5 dígitos</span>",
+                maxlength: "<span class='errors-class'>El código postal esta conformado por 5 dígitos</span>"
+            },
+            rfc: {
+                required: "<span class='errors-class'>Escribe tu RFC</span>",
+                minlength: "<span class='errors-class'>El RFC esta conformado por lo menos por 12 dígitos</span>",
+                maxlength: "<span class='errors-class'>El RFC esta conformado hasta por 13 dígitos</span>"
             },
             fecha: {
                 required: "<span class='errors-class'>Debe seleccionar una fecha</span>"
