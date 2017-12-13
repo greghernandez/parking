@@ -57,8 +57,10 @@ switch ($opcion) {
             	<p><span class="bold">Placa:  </span><input type="text"  name="placa" value="<?php echo ""; ?>" placeholder="Escribe la placa" required=""></p> 
             	<p><span class="bold">Modelo:  </span><input type="text"  name="modelo" value="<?php echo ""; ?>" placeholder="Escribe el modelo del coche"  required=""></p>
             	<p><span class="bold">Color:  </span><input type="text"  name="color" value="<?php echo ""; ?>" placeholder="Escribe  el color del coche" required=""></p>
-            	<p><span class="bold">Fecha:  </span><input type="text"  name="fecha" value="<?php echo ""; ?>" placeholder="Escribe la fecha del auto" required=""></p>
-            	<button class="btn bg-azul" type="submit" name="submit" name="" value="submit">Guardar Coche</button>
+            	<p><span class="bold">Fecha:  </span><input type="number"  name="fecha" value="<?php echo ""; ?>" placeholder="Escribe la fecha del auto" required=""></p>
+            	<div class="center">
+            		<button class="btn bg-azul" type="submit" name="submit" name="" value="submit">Guardar Coche</button>
+            	</div>
 			</form> 
 
 		</div>
