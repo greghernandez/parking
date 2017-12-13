@@ -28,11 +28,13 @@ $().ready(function() {
             },
             telefono: {
                 required: true,
-                minlength: 10,
-                maxlenght: 10
+                minlength: 9,
+                maxlength: 10
             },
-            fecha: {
-                required: true
+            telefono: {
+                required: true,
+                minlength: 9,
+                maxlength: 10
             },
             checkBox: {
                 required: true
@@ -69,7 +71,11 @@ $().ready(function() {
             },
             telefono: {
                 required: "<span class='errors-class'>Debe ingresar un teléfono de 10 dígitos</span>",
-                minlength: "<span class='errors-class'>El teléfono tiene que tener 10 dígitos</span>"            
+                minlength: "<span class='errors-class'>El teléfono tiene que tener 10 dígitos</span>",
+                maxlength: "<span class='errors-class'>El teléfono tiene que tener 10 dígitos</span>"           
+            },
+            tarjeta: {
+                required: "<span class='errors-class'>Tarjeta</span>"
             },
             fecha: {
                 required: "<span class='errors-class'>Debe seleccionar una fecha</span>"

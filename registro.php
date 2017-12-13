@@ -18,6 +18,7 @@
   	<script src="js/jQuery.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/validacion.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 </head>
 <body>
 
@@ -71,6 +72,7 @@
 				<input type="number" name="telefono" placeholder="Telefono" required>
 				
 				<label for="">Numero de tarjeta:</label>
+				<p>Utilice el sigiente formato: 1234-1234-1234-1234</p>
 				<input type="number" name="tarjeta" placeholder="Numero de tarjeta" required="">
 				
 				<label for="">CVV</label>
