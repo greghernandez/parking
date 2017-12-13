@@ -39,14 +39,14 @@ include ('conexion.php');
     	</div>
     	<div class="card animated bounceInDown">
             <p class="card-title">Información personal:</p>
-            <form action="">
-                <p><span class="bold">Nombre:  </span><input type="text" value="<?php echo $nombre_usuario; ?>" placeholder="Escribe tu nombre"></p> 
-                <p><span class="bold">Apellidos:  </span><input type="text" value="<?php echo $apellido; ?>" placeholder="Escribe tu epellido"></p>
+            <form action="" method="" id="form-to-valid">
+                <p><span class="bold">Nombre:  </span><input type="text" value="<?php echo $nombre_usuario; ?>"  placeholder="Escribe tu nombre" name="nombre" requiered=""></p> 
+                <p><span class="bold">Apellidos:  </span><input type="text" value="<?php echo $apellido; ?>" placeholder="Escribe tu epellido" name="apellidos" requiered=""></p>
                 <hr>
-                <p><span class="bold">Email:  </span><input type="email" value="<?php echo $correo; ?>" placeholder="Escribe tu email"></p>
-                <p><span class="bold">Teléfono:  </span><input type="text" value="<?php echo $telefono; ?>" placeholder="Escribe tu Teléfono"></p>
+                <p><span class="bold">Email:  </span><input type="email" value="<?php echo $correo; ?>" placeholder="Escribe tu email" name="email" requiered=""></p>
+                <p><span class="bold">Teléfono:  </span><input type="text" value="<?php echo $telefono; ?>" placeholder="Escribe tu Teléfono" name="telefono" requiered=""></p>
                 <div class="center">
-                    <button class="btn bg-verde btn-large">Guardar cambios</button>
+                    <button type="submit" name="submit" value="submit" class="btn bg-verde btn-large">Guardar cambios</button>
                 </div>
             </form>
     	</div>
@@ -57,12 +57,14 @@ include ('conexion.php');
             <p><span class="bold">Placa:  </span><?php echo $placa ?></p>
         </div>-->
         <div class="card animated bounceInDown">
-            <p class="card-title">Contraseña:</p>
-            <input type="password" name="passActual" placeholder="Ingresa tu contraseña actual">
-            <input type="password" name="passNueva" placeholder="Ingresa la nueva contraseñas">
-            <div class="center">
-                <button class="btn bg-verde btn-large"> Actualizar contraseña</button>
-            </div>
+            <form action="" id="form-to-valid">
+                <p class="card-title">Contraseña:</p>
+                <input type="password" name="password" placeholder="Ingresa tu contraseña actual" required="">
+                <input type="password" name="valPassword" placeholder="Ingresa la nueva contraseñas" required="">
+                <div class="center">
+                    <button class="btn bg-verde btn-large"> Actualizar contraseña</button>
+                </div>
+            </form>
         </div>
     </div>
 <?php
