@@ -36,23 +36,28 @@
 					$telefono = $_POST['telefono'];
 					$tarjeta = $_POST['tarjeta'];
 					$cvv = $_POST['cvv'];
+					//$tipo = $_POST['tipo'];
 					$password = $_POST['password'];
+					$estado = $_POST['estado'];
+					$municipio = $_POST['municipio'];
+					$cp = $_POST['cp'];
+					$rfc = $_POST['rfc'];
 
-					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($tarjeta) || empty($cvv) || empty($password)){
+					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($password) || empty($estado) || empty($municipio) || empty($cp) || empty($rfc)){
 						echo "<p class='badge center bg-rojo'> Por favor completa todos los campos</p>";
 					}else{
 						include ('conexion.php');
     					$con = Conectarse();
-						$qry= "INSERT INTO usuario (nombre, apellido, correo, password, telefono, no_tarjeta, cvv) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$tarjeta}',  '{$cvv}')";
+						$qry= "INSERT INTO cliente (nombre, apellido, correo, password, telefono, estado, municipio, cp, rfc) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$estado}',  '{$municipio}', '{$cp}', '{$rfc}')";
 
     					echo $qry;
     					$result = $con->query($qry);
-    					$qry2= "SELECT no_usuario FROM usuario WHERE correo='{$email}';";
+    					$qry2= "SELECT id_cliente FROM cliente WHERE correo ='{$email}';";
 	 					$result2 = $con->query($qry2);
-         				$num_usuario = $result2->fetch_assoc()['no_usuario'];
+         				$num_usuario = $result2->fetch_assoc()['id_cliente'];
                 		session_start();
                 		$_SESSION['user']=$num_usuario;
-    					header("Location: coches.php?opcion=agregar");
+    					//header("Location: coches.php?opcion=agregar");
 
 					}
 
@@ -76,23 +81,23 @@
 
 				<hr>
 				
-				<p class="center">Datos Fiscales</p>
+				<p class="center bold">Datos Fiscales</p>
 
 				<label for="">Estado:</label>
-				<input type="text" name="estado" placeholder="Estado">
+				<input type="text" name="estado" placeholder="Estado" required="">
 
 				<label for="">Municipio:</label>
-				<input type="text" name="municipio" placeholder="Municipio">
+				<input type="text" name="municipio" placeholder="Municipio" required="">
 
 				<label for="">CP:</label>
-				<input type="text" name="cp" placeholder="CP">
+				<input type="text" name="cp" placeholder="CP" required="">
 
 				<label for="">RFC:</label>
-				<input type="text" name="rfc" placeholder="RFC	">
+				<input type="text" name="rfc" placeholder="RFC	" required="">
 
 
 				<hr>
-				<p class="center">Metodo de pago:</p>
+				<p class="center bold">Metodo de pago:</p>
 				
 				<label for="">Numero de tarjeta:</label>
 				<input type="number" name="tarjeta" placeholder="Numero de tarjeta" required="">
@@ -100,8 +105,8 @@
 				<label for="">CVV</label>
 				<input type="number" name="cvv" placeholder="CVV" required="">
 
-				<label for=""></label>
-				<select name="" id="">
+				<label for="">Tipo:</label>
+				<select name="tipo" id="" required="e">
 					<option value="credito">Credito</option>
 					<option value="debito">Debito</option>
 				</select>

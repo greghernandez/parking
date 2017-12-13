@@ -13,7 +13,7 @@ require 'header.php';
     $id_usuario = $_SESSION['user']; /*Remplazar con un session ID*/
     include ('conexion.php');
     $con = Conectarse();
-    $qry= "SELECT * FROM usuario WHERE no_usuario = $id_usuario;";
+    $qry= "SELECT * FROM cliente WHERE id_cliente = $id_usuario;";
     $result = $con->query($qry);
     while ($row = mysqli_fetch_array($result)) {
         $nombre_usuario = $row['nombre'];
