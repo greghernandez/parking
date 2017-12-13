@@ -16,6 +16,10 @@
   	<link rel="stylesheet"
   	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
   	<script src="js/ajax.js"></script>
+  	<script src="js/jQuery.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/validacion.js"></script>
+
 </head>
 <body>
 
