@@ -18,7 +18,7 @@
   	<script src="js/jQuery.js"></script>
     <script src="js/jquery.validate.min.js"></script>
     <script src="js/validacion.js"></script>
-    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
 </head>
 <body>
 
@@ -70,16 +70,35 @@
 				
 				<label for="">Telefono:</label>
 				<input type="number" name="telefono" placeholder="Telefono" required>
+
+				<label for="">Pasword</label>
+				<input type="password" name="password" placeholder="password" required="">
+
+				<hr>
+				
+				<p class="center">Datos Fiscales</p>
+
+				<label for="">Estado:</label>
+				<input type="text">
+				
+				<label for="">Municipio:</label>
+				<input type="text">
+				
+				<label for="">CP:</label>
+				<input type="text">
+				
+				<label for="">RFC:</label>
+				<input type="text">
+				
+
+				<hr>
+				<p class="center">Metodo de pago:</p>
 				
 				<label for="">Numero de tarjeta:</label>
-				<p>Utilice el sigiente formato: 1234-1234-1234-1234</p>
 				<input type="number" name="tarjeta" placeholder="Numero de tarjeta" required="">
 				
 				<label for="">CVV</label>
 				<input type="number" name="cvv" placeholder="CVV" required="">
-
-				<label for="">Pasword</label>
-				<input type="password" name="password" placeholder="password" required="">
 				
 				<div class="center ">
 					<button type="submit" value="submit" name="submit" class="btn bg-azul btn-large"> Registrarme</button>

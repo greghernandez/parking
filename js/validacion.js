@@ -36,6 +36,11 @@ $().ready(function() {
                 minlength: 9,
                 maxlength: 10
             },
+            tarjeta: {
+                required: true,
+                maxlength: 16,
+                minlength: 16
+            },
             checkBox: {
                 required: true
             },
