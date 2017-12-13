@@ -115,9 +115,15 @@ if($hora<10){
                 Historial
             </button>
         </div>
-        
         <!--Contenedor-->
         <div id="activos" class="cont-tabs">
+            <?php 
+            if (empty($locacion)) {
+            ?>
+                <p class="center">No tienes tickets activos</p>
+            <?php
+            }else{
+            ?>
             <div class="card animated bounceInDown">
                 <p class="card-title">Parkimetro #<?php echo $locacion ?></p>
                 <div class="ticket-cont">
@@ -144,9 +150,15 @@ if($hora<10){
                     </div>
 
             </div>
+            <?php
+            }
+            ?>
             
         </div>
         <div id="historial" class="cont-tabs" style="display: none;">
+            <?php 
+            //condicion para no mostrar cards
+            ?>
             <div class="card animated bounceInDown"></div>
         </div>
 <script>
