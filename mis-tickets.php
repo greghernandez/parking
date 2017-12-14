@@ -144,7 +144,7 @@
             <?php
             $con = Conectarse();
             $id_cliente = $_SESSION['user'];
-            $qry= "SELECT * FROM realiza_parq WHERE id_cliente = $id_cliente";
+            $qry= "SELECT * FROM `pago_parq` WHERE id_pago IN (SELECT id_pago FROM realiza_parq WHERE id_cliente = 7 )";
             $result = $con->query($qry);
 
             while ($row = mysqli_fetch_array($result)) {
