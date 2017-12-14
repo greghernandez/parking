@@ -67,7 +67,7 @@
                 		$qry2= "INSERT INTO tarjeta (no_tarjeta, id_cliente, cvv, tipo) VALUES ('{$tarjeta}', '{$num_usuario}', '{$cvv}', '{$tipo}')";
     					$result2 = $con->query($qry2);
                         //encriptar datos
-                        $encrip="UPDATE cliente SET password = MD5('{$password}'), rfc = MD5('{$cvv}') WHERE id_cliente = {$_SESSION['user']}";
+                        $encrip="UPDATE cliente SET rfc = MD5('{$cvv}') WHERE id_cliente = {$_SESSION['user']}";
                         $resultenc = $con->query($encrip);
                         $encri2="UPDATE tarjeta SET  no_tarjeta = MD5('{$tarjeta}') WHERE id_cliente = {$_SESSION['user']}";
                         $resultenc2 = $con->query($encrip2);
