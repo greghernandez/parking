@@ -54,20 +54,24 @@
 					}else{
 						include ('conexion.php');
     					$con = Conectarse();
-						$qry= "INSERT INTO cliente (nombre, apellido, correo, password, telefono, estado, municipio, cp, rfc, direccion) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$estado}',  '{$municipio}', '{$cp}', '{$rfc}', '{$direccion}')";
-
-    					echo $qry;
+						$qry= "INSERT INTO cliente (nombre, apellido, correo, password, telefono, estado, municipio, cp, rfc, direccion) VALUES ('{$nombre}', '{$apellidos}', '{$email}','{$password}', '{$telefono}', '{$estado}',  '{$municipio}', '{$cp}','{$rfc}', '{$direccion}')";
+                        
+    					$qry;
     					$result = $con->query($qry);
     					$qry3= "SELECT id_cliente FROM cliente WHERE correo ='{$email}';";
 	 					$result3 = $con->query($qry3);
          				$num_usuario = $result3->fetch_assoc()['id_cliente'];
                 		session_start();
                 		$_SESSION['user']=$num_usuario;
-
                 		//tarjeta de credito
                 		$qry2= "INSERT INTO tarjeta (no_tarjeta, id_cliente, cvv, tipo) VALUES ('{$tarjeta}', '{$num_usuario}', '{$cvv}', '{$tipo}')";
     					$result2 = $con->query($qry2);
-    					header("Location: coches.php?opcion=agregar");
+                        //encriptar datos
+                        $encrip="UPDATE cliente SET password = MD5('{$password}'), rfc = MD5('{$cvv}') WHERE id_cliente = {$_SESSION['user']}";
+                        $resultenc = $con->query($encrip);
+                        $encri2="UPDATE tarjeta SET  no_tarjeta = MD5('{$tarjeta}') WHERE id_cliente = {$_SESSION['user']}";
+                        $resultenc2 = $con->query($encrip2);
+                        header("Location: coches.php?opcion=agregar");
 										
 					}
 
