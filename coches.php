@@ -40,7 +40,7 @@ switch ($opcion) {
 			$id_usuario = $_SESSION['user'];
 				include ('conexion.php');
     					$con = Conectarse();
-						$qry= "INSERT INTO `auto`(`modelo`, `year`, `color`, `placa`, `estado`, `id_cliente`) VALUES ('{$modelo}', '{$fecha}', '{$color}', '{$placa}', 0, ".$id_usuario.")";
+						$qry= "INSERT INTO `auto`(`modelo`, `year`, `color`, `placa`, `estado`, `id_cliente`) VALUES ('{$modelo}', '{$fecha}', '{$color}', '{$placa}', 1, ".$id_usuario.")";
 
     					$result = $con->query($qry);
     					//echo $qry;
