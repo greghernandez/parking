@@ -20,7 +20,7 @@ include ('conexion.php');
         $municipio = $row['municipio'];
         $direccion = $row['direccion'];
         $cp = $row['cp'];
-        $rfc = $row['rfc'];
+        $rfc =$row['rfc'];
         //$no_tarjeta = $row['no_tarjeta'];
     }
     $qry= "SELECT * FROM auto WHERE id_cliente = $id_usuario;";
@@ -29,7 +29,20 @@ include ('conexion.php');
         $placa = $row['placa'];
         $modelo = $row['modelo'];
     }
-
+    if(isset($_POST['actualizar'])){
+        
+        $nombre_usuario = $_POST['nombre'];
+        $apellido = $_POST['apellidos'];
+        $correo = $_POST['email'];
+        $telefono = $_POST['telefono'];
+        $estado = $_POST['estado'];
+        $municipio = $_POST['municipio'];
+        $direccion = $_POST['direccion'];
+        $cp = $_POST['cp'];
+        $rfc =$_POST['rfc'];
+        $act="UPDATE `cliente` SET `nombre`='{$nombre_usuario}',`apellido`='{$apellido}',`correo`='{$correo}',`telefono`='{$telefono}',`estado`='{$estado}',`municipio`='{$municipio}',`cp`='{$cp}',`rfc`='{$rfc}',`direccion`='{$direccion}' WHERE id_cliente = '{$id_usuario}'";
+        $actu = $con->query($act);
+    }
 ?>
 
 	<div class="nav-title">
@@ -44,7 +57,7 @@ include ('conexion.php');
     	</div>
     	<div class="card animated bounceInDown">
             <p class="card-title">Información personal:</p>
-            <form action="" method="" id="form-to-valid">
+            <form action="" method="POST" id="form-to-valid">
                 <p><span class="bold">Nombre:  </span><input type="text" value="<?php echo $nombre_usuario; ?>"  placeholder="Escribe tu nombre" name="nombre" requiered=""></p> 
                 <p><span class="bold">Apellidos:  </span><input type="text" value="<?php echo $apellido; ?>" placeholder="Escribe tu epellido" name="apellidos" requiered=""></p>
                 <hr>
@@ -62,7 +75,7 @@ include ('conexion.php');
                 <P><span class="bold">RFC: </span></P>
                 <input type="text" value="<?php echo $rfc; ?>" placeholder="" name="rfc" required="">
                 <div class="center">
-                    <button type="submit" name="submit" value="submit" class="btn bg-verde btn-large">Guardar cambios</button>
+                    <button type="submit" name="actualizar" value="" class="btn bg-verde btn-large">Guardar cambios</button>
                 </div>
             </form>
     	</div>
@@ -72,6 +85,7 @@ include ('conexion.php');
             <p><span class="bold">Modelo:  </span><?php echo $modelo ?></p>
             <p><span class="bold">Placa:  </span><?php echo $placa ?></p>
         </div>-->
+        <!--
         <div class="card animated bounceInDown">
             <form  id="form-to-valid">
                 <p class="card-title">Contraseña:</p>
@@ -82,6 +96,7 @@ include ('conexion.php');
                 </div>
             </form>
         </div>
+        -->
     </div>
 <?php
 require 'menu.php';
