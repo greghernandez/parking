@@ -128,7 +128,7 @@ switch ($opcion) {
     }
 	?>
 		<div class="card animated bounceInDown">
-			<form action="" method="POST">
+			<form action="" method="POST" id="form-to-valid">
 				<p class="card-title">Edita la información del <?php echo $modelo ?></p>
             	<label><span class="bold">Placa:  </span></label>
             		<input type="text"  name="placa" value="<?php echo $placa; ?>" placeholder="Escribe la placa"> 
