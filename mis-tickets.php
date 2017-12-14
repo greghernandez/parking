@@ -2,94 +2,6 @@
     require 'header.php';
     session_start();
     estaLogeado();//El usuario esta logeado
-    if(isset($_GET['Tiempo'])){
-    $tiempo=$_GET['Tiempo'];
-    $locacion=$_GET['id_parq'];
-    switch ($tiempo) {
-        case 0.15:?>
-            <?php
-            $minuto=15;
-            $hora=0;
-            break;
-        case 0.30:
-            $minuto=30;
-            $hora=0;
-            break;
-        case 0.45:
-            $minuto=45;
-            $hora=0;
-            break;
-        case 1:
-            $minuto=0;
-            $hora=1;
-            break;
-        case 1.15:
-            $minuto=15;
-            $hora=1;
-            break;
-        case 1.30:
-            $minuto=30;
-            $hora=1;
-            break;
-        case 1.45:
-            $minuto=45;
-            $hora=1;
-            break;
-        case 2:
-            $minuto=0;
-            $hora=2;
-            break;
-        case 2.15:
-            $minuto=15;
-            $hora=2;
-            break;
-        case 2.30:
-            $minuto=30;
-            $hora=2;
-            break;
-        case 2.45:
-            $minuto=45;
-            $hora=2;
-            break;
-        case 3:
-            $minuto=0;
-            $hora=3;
-            break;
-        case 3.15:
-            $minuto=15;
-            $hora=3;
-            break;
-        case 3.30:
-            $minuto=30;
-            $hora=3;
-            break;
-        case 3.45:
-            $minuto=45;
-            $hora=3;
-            break;
-        case 4:
-            $minuto=0;
-            $hora=4;
-            break;
-            
-    }
-if($minuto<10){
-    $minuto="0".$minuto;
-}
-if($hora<10){
-    $hora="0".$hora;
-}
-        ?>
-            <script>
-                var minutos=<?php echo $minuto ?>;
-                var horas=<?php echo $hora ?>;
-                locacion=<?php echo $locacion ?>;
-                localStorage.setItem('minutos',minutos);
-                localStorage.setItem('horas',horas);
-                localStorage.setItem('locacion',locacion);
-            </script>
-        <?php
-    }else{
         include ('conexion.php');
         $con = Conectarse();
         $qry1 = "SELECT `id_pago` FROM `realiza_parq` WHERE id_cliente = '{$_SESSION['user']}'";
@@ -98,9 +10,82 @@ if($hora<10){
         $qry2 = "SELECT `id_parq` FROM `pago_parq` WHERE id_pago = '{$id_pago}'";
         $result2 = $con->query($qry2);
         $locacion = $result2->fetch_assoc()['id_parq'];
-        
-    }
+        $qry2 = "SELECT `tiempo` FROM `pago_parq` WHERE id_pago = '{$id_pago}'";
+        $result2 = $con->query($qry2);
+        $tiempo = $result2->fetch_assoc()['tiempo'];
+        switch ($tiempo){
+            case 0.15:
+                $horas=0;
+                $minutos=0.15;
+            break;
+            case 0.30:
+                $horas=0;
+                $minutos=0.30;
+            break;   
+            case 0.45:
+                $horas=0;
+                $minutos=0.45;
+            break;
+            case 1:
+                $horas=1;
+                $minutos=0;
+            break;
+            case 1.15:
+                $horas=1;
+                $minutos=0.15;
+            break;
+            case 1.30:
+                $horas=1;
+                $minutos=0.30;
+            break;   
+            case 1.45:
+                $horas=1;
+                $minutos=0.45;
+            break;
+            case 2:
+                $horas=2;
+                $minutos=0;
+            break;
+            case 2.15:
+                $horas=2;
+                $minutos=0.15;
+            break;
+            case 2.30:
+                $horas=2;
+                $minutos=0.30;
+            break;   
+            case 2.45:
+                $horas=2;
+                $minutos=0.45;
+            break;
+            case 3:
+                $horas=3;
+                $minutos=0;
+            break;
+            case 3.15:
+                $horas=3;
+                $minutos=0.15;
+            break;
+            case 3.30:
+                $horas=3;
+                $minutos=0.30;
+            break;   
+            case 3.45:
+                $horas=3;
+                $minutos=0.45;
+            break;
+            case 4:
+                $horas=4;
+                $minutos=0;
+            break;
+        }
     ?>
+<script>
+    horas=<?php echo $horas ?>;
+    minutos=<?php echo $minutos ?>;
+    localStorage.setItem('horas',horas);
+    localStorage.setItem('minutos',minutos);
+</script>
         <div class="nav-title">
             <span class="title">Mis tickets</span>  
         </div>
@@ -146,7 +131,7 @@ if($hora<10){
                     </div>
                 </div>
                     <div class="col-12 center">
-                        <a class="btn bg-verde center" href="ticket.php?id=<?php echo $locacion ?>">Extender Tiempo</a>
+                        <a class="btn bg-verde center" href="ticket.php?id_parq=<?php echo $locacion ?>&id_pago=<?php echo $id_pago ?>">Extender Tiempo</a>
                     </div>
 
             </div>
@@ -164,11 +149,14 @@ if($hora<10){
 <script>
 window.addEventListener('load', inicio, true)
 var centesimas = 0;
-var segundos = 0;
-var minutos = localStorage.getItem('minutos');
-var horas = localStorage.getItem('horas');
+    var segundos = localStorage.getItem('segundos');
+    var minutos = localStorage.getItem('minutos');
+    var horas = localStorage.getItem('horas');
 function inicio () {
 	control = setInterval(cronometro,10);
+    var segundos = localStorage.getItem('segundos');
+    var minutos = localStorage.getItem('minutos');
+    var horas = localStorage.getItem('horas');
 }
 function parar () {
 	clearInterval(control);

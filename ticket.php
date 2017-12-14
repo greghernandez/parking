@@ -2,6 +2,13 @@
 require 'header.php';
 session_start();
 estaLogeado();//El usuario esta logeado
+$id_pago=$_GET['id_pago'];
+if(isset($_GET['actualizar'])){
+    $num=$_GET['num'];
+    
+    
+}
+
 ?>
 	<div class="nav-title">
 		<span class="title big">Exteder Tiempo</span>	
@@ -11,7 +18,7 @@ estaLogeado();//El usuario esta logeado
     <div id="contenedor">
     	<div class="card animated bounceInDown">
     		<div class="center card-title">
-                <p>Parkimetro #<?php echo $_GET['id'] ?></p>
+                <p>Parkimetro #<?php echo $_GET['id_parq'] ?></p>
                 <p>Av. Juarez</p>
     		</div>
     		<div class="center time-cart bg-purple">
@@ -30,18 +37,20 @@ estaLogeado();//El usuario esta logeado
             <div class="center">
                 <p class="bold">Extender tiempo</p>
             </div>
+            <form action="" method="GET">
             <div class="center">
-                <input id="num" class="num-time" type="number" min="0" step="15"value="">
+                <input id="num" class="num-time" name="num" type="number" min="0" step="15"value="" placeholder="Minutos">
             </div>
             <div class="center">
-                <button onclick="actualizar()" href="" class="btn btn-large bg-verde center">Realizar Pago</button>
+                <button onclick="actualizar()" name="actualizar" href="" class="btn btn-large bg-verde center" id="actualizar">Realizar Pago</button>
             </div>
+            </form>
     	</div>
     </div>
 <?php ?>
 <script>    
 var centesimas = 0;
-var segundos = 0;
+var segundos = localStorage.getItem('segundos');
 var minutos = localStorage.getItem('minutos');
 var horas = localStorage.getItem('horas');
 window.addEventListener('load', inicio, true);
@@ -49,9 +58,17 @@ function actualizar (){
     var total= localStorage.getItem('total');
     num= document.getElementById('num').value;
     minutos=parseInt(minutos)+ parseInt(num);
-    if(minutos>60){
-        minutos=minutos-60;
-        horas=parseInt(horas)+1;
+
+    if(horas<3){
+        if(minutos>60){
+            minutos=minutos-60;
+            horas=parseInt(horas)+1;
+            alert("Se actualizo tu tiempo");
+        }
+        
+    }else{
+        document.getElementById('actualizar').disabled=true;
+        alert("Tiempo maximo");
     }
     document.querySelector('#Minutos').innerHTML =":"+ minutos;
     document.querySelector('#Horas').innerHTML = horas;
