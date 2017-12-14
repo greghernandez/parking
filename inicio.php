@@ -18,7 +18,7 @@
 	 	$con = Conectarse();
 	 	$qry= "SELECT password FROM cliente WHERE correo='{$correo_usuario}';";
 	 	$result = $con->query($qry);
-	 	$passBD = $result->fetch_assoc()['password'];
+	 	echo $passBD = $result->fetch_assoc()['password'];
          $qry2= "SELECT id_cliente FROM cliente WHERE correo='{$correo_usuario}';";
 	 	$result2 = $con->query($qry2);
          $num_usuario = $result2->fetch_assoc()['id_cliente'];

@@ -131,7 +131,7 @@
                     </div>
                 </div>
                     <div class="col-12 center">
-                        <a class="btn bg-verde center" href="ticket.php?id_parq=<?php echo $locacion ?>&id_pago=<?php echo $id_pago ?>">Extender Tiempo</a>
+                        <a class="btn bg-verde center" href="mis-ticket.php?id_parq=<?php echo $locacion ?>&id_pago=<?php echo $id_pago ?>">Extender Tiempo</a>
                     </div>
 
             </div>
