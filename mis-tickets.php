@@ -144,19 +144,18 @@
             <?php
             $con = Conectarse();
             $id_cliente = $_SESSION['user'];
-            $qry= "SELECT * FROM `pago_parq` WHERE id_pago IN (SELECT id_pago FROM realiza_parq WHERE id_cliente = 7 )";
+            $qry= "SELECT * FROM `pago_parq` WHERE id_pago IN (SELECT id_pago FROM realiza_parq WHERE id_cliente = $id_cliente )";
             $result = $con->query($qry);
 
             while ($row = mysqli_fetch_array($result)) {
                 
                 ?>
-                <div class="card animated bounceInDown">
-                    <p class="card-title">Parkimetro #</p>
-                    <p><span class="bold">Calle: </span></p>
-                    <p><span class="bold">Tiempo: </span></p>
-                    <p><span class="bold">Monto: </span></p>
-                    <p><span class="bold">fecha: </span><?php echo $row['fecha']?></p>
-                    <button class="btn bg-azul" type="">Factura</button>
+                <div class="card animated bounceInDown center">
+                    <p class="card-title">Parkimetro # <?php echo $row['id_parq']?></p><span class="bold">Tiempo: </span> <?php echo $row['tiempo'];?>
+                    <span class="bold">Monto: </span> <?php echo $row['monto'];?>
+                    <div class="center">
+                        <button class="btn bg-azul bg-large" type="" onclick="window.location='factura.php?id_parq='"">Factura</button>
+                    </div>
                 </div>
                 <?php
             } 
