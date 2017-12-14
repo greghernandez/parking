@@ -77,7 +77,7 @@ $().ready(function() {
             color: {
                 required: true
             },
-            año: {
+            fecha: {
                 required: true,
                 minlength: 4,
                 maxlength: 4
@@ -145,7 +145,7 @@ $().ready(function() {
                 minlength: "<span class='errors-class'>El RFC esta conformado por lo menos por 12 dígitos</span>",
                 maxlength: "<span class='errors-class'>El RFC esta conformado hasta por 13 dígitos</span>"
             },
-            fecha: {
+            x: {
                 required: "<span class='errors-class'>Debe seleccionar una fecha</span>"
             },
             checkBox: {
@@ -165,9 +165,10 @@ $().ready(function() {
             color: {
                 required: "<span class='errors-class'>Ingrese el color de su coche</span>"
             },
-            año: {
+            fecha: {
                 required: "<span class='errors-class'>Ingrese el color de su coche</span>",
                 minlength: "<span class='errors-class'>Ingrese el año del modelo de su coche (4 dígitos)</span>",
+                maxlength: "<span class='errors-class'>Ingrese el año del modelo de su coche (4 dígitos)</span>"
             }
             
         }

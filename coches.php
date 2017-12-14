@@ -53,11 +53,11 @@ switch ($opcion) {
 		?>
 		<div class="card animated bounceInDown">
 			<form action="#" method="POST" id="form-to-valid">
-				<p class="card-title">Ingresa la información del coche:</p>
-            	<p><span class="bold">Placa:  </span><input type="text"  name="placa" value="<?php echo ""; ?>" placeholder="Escribe la placa" required=""></p> 
-            	<p><span class="bold">Modelo:  </span><input type="text"  name="modelo" value="<?php echo ""; ?>" placeholder="Escribe el modelo del coche"  required=""></p>
-            	<p><span class="bold">Color:  </span><input type="text"  name="color" value="<?php echo ""; ?>" placeholder="Escribe  el color del coche" required=""></p>
-            	<p><span class="bold">Fecha:  </span><input type="number"  name="fecha" value="<?php echo ""; ?>" placeholder="Escribe la fecha del auto" required=""></p>
+				<p class="card-title">Ingresa la información del cochee:</p>
+            	<p><span class="bold">Placa:  </span><input type="text"  name="placa" placeholder="Escribe la placa" required=""></p> 
+            	<p><span class="bold">Modelo:  </span><input type="text"  name="modelo" placeholder="Escribe el modelo del coche"  required=""></p>
+            	<p><span class="bold">Color:  </span><input type="text"  name="color"  placeholder="Escribe  el color del coche" required=""></p>
+            	<p><span class="bold">Fecha:  </span><input type="number"  name="fecha" placeholder="Escribe la fecha del auto" required=""></p>
             	<div class="center">
             		<button class="btn bg-azul" type="submit" name="submit" name="" value="submit">Guardar Coche</button>
             	</div>
