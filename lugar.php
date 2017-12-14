@@ -57,7 +57,7 @@
                                 $resultid = $con->query($qryid);
                                  $id_pago = $resultid->fetch_assoc()['id_pago'];
                                 echo $id_pago;
-                                echo $qry4 = "INSERT INTO `realiza_parq`(`id_cliente`, `id_pago`,`fecha`) VALUES ('{$_SESSION['user']}','{$id_pago}','{$fecha}');";
+                                echo $qry4 = "INSERT INTO `realiza_parq`(`id_cliente`, `id_pago`,`fecha`) VALUES ({$_SESSION['user']},'{$id_pago}','{$fecha}');";
                                 mysqli_query($con, $qry4);
                                 header("Location: index.php");
                           }

@@ -183,8 +183,8 @@ $().ready(function() {
             },
             fecha: {
                 required: "<span class='errors-class'>Ingrese el color de su coche</span>",
-                minlength: "<span class='errors-class'>Ingrese el año del modelo de su coche (4 dígitos)</span>",
-                maxlength: "<span class='errors-class'>Ingrese el año del modelo de su coche (4 dígitos)</span>"
+                min: "<span class='errors-class'>El modelo debe ser mayor a  1940.</span>",
+                max: "<span class='errors-class'>El modelo debe ser menor a  2019.</span>"
             }
             
         }
