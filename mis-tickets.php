@@ -131,7 +131,7 @@
                     </div>
                 </div>
                     <div class="col-12 center">
-                        <a class="btn bg-verde center" href="mis-ticket.php?id_parq=<?php echo $locacion ?>&id_pago=<?php echo $id_pago ?>">Extender Tiempo</a>
+                        <a class="btn bg-verde center" href="ticket.php?id_parq=<?php echo $locacion ?>&id_pago=<?php echo $id_pago ?>">Extender Tiempo</a>
                     </div>
 
             </div>
@@ -141,10 +141,26 @@
             
         </div>
         <div id="historial" class="cont-tabs" style="display: none;">
-            <?php 
-            //condicion para no mostrar cards
+            <?php
+            $con = Conectarse();
+            $id_cliente = $_SESSION['user'];
+            $qry= "SELECT * FROM realiza_parq WHERE id_cliente = $id_cliente";
+            $result = $con->query($qry);
+
+            while ($row = mysqli_fetch_array($result)) {
+                
+                ?>
+                <div class="card animated bounceInDown">
+                    <p class="card-title">Parkimetro #</p>
+                    <p><span class="bold">Calle: </span></p>
+                    <p><span class="bold">Tiempo: </span></p>
+                    <p><span class="bold">Monto: </span></p>
+                    <p><span class="bold">fecha: </span><?php echo $row['fecha']?></p>
+                    <button class="btn bg-azul" type="">Factura</button>
+                </div>
+                <?php
+            } 
             ?>
-            <div class="card animated bounceInDown"></div>
         </div>
 <script>
 window.addEventListener('load', inicio, true)

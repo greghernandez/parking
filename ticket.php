@@ -5,6 +5,8 @@ estaLogeado();//El usuario esta logeado
 $id_pago=$_GET['id_pago'];
 if(isset($_GET['actualizar'])){
     $num=$_GET['num'];
+    echo "string";
+    header("Location: ticket.php?num=$id_pago");
     
     
 }
@@ -42,7 +44,7 @@ if(isset($_GET['actualizar'])){
                 <input id="num" class="num-time" name="num" type="number" min="0" step="15"value="" placeholder="Minutos">
             </div>
             <div class="center">
-                <button onclick="actualizar()" name="actualizar" href="" class="btn btn-large bg-verde center" id="actualizar">Realizar Pago</button>
+                <button name="actualizar" onclick="actualizar()" href="" class="btn btn-large bg-verde center" id="actualizar">Realizar Pago</button>
             </div>
             </form>
     	</div>
