@@ -92,7 +92,7 @@ if($hora<10){
     }else{
         include ('conexion.php');
         $con = Conectarse();
-        $qry1 = "SELECT `id_pago` FROM `realiza_parq` WHERE no_usuario = '{$_SESSION['user']}'";
+        $qry1 = "SELECT `id_pago` FROM `realiza_parq` WHERE id_cliente = '{$_SESSION['user']}'";
         $result1 = $con->query($qry1);
         $id_pago = $result1->fetch_assoc()['id_pago'];
         $qry2 = "SELECT `id_parq` FROM `pago_parq` WHERE id_pago = '{$id_pago}'";
