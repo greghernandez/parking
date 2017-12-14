@@ -22,7 +22,7 @@ require 'header.php';
         $telefono = $row['telefono'];
         $no_tarjeta = $row['no_tarjeta'];
     }
-    $qry= "SELECT * FROM auto WHERE id_cliente = $id_usuario and estado = 0;";
+    $qry= "SELECT * FROM auto WHERE id_cliente = $id_usuario and estado = 1;";
     $result = $con->query($qry);
     while ($row = mysqli_fetch_array($result)) {
         $placa = $row['placa'];

@@ -16,6 +16,11 @@ include ('conexion.php');
         $apellido = $row['apellido'];
         $correo = $row['correo'];
         $telefono = $row['telefono'];
+        $estado = $row['estado'];
+        $municipio = $row['municipio'];
+        $direccion = $row['direccion'];
+        $cp = $row['cp'];
+        $rfc = $row['rfc'];
         //$no_tarjeta = $row['no_tarjeta'];
     }
     $qry= "SELECT * FROM auto WHERE id_cliente = $id_usuario;";
@@ -45,6 +50,17 @@ include ('conexion.php');
                 <hr>
                 <p><span class="bold">Email:  </span><input type="email" value="<?php echo $correo; ?>" placeholder="Escribe tu email" name="email" requiered=""></p>
                 <p><span class="bold">Teléfono:  </span><input type="text" value="<?php echo $telefono; ?>" placeholder="Escribe tu Teléfono" name="telefono" requiered=""></p>
+                <hr>
+                <P><span class="bold">Estado: </span></P>
+                <input type="text" value="<?php echo $estado; ?>" placeholder="" name="estado" required="">
+                <P><span class="bold">Municipio: </span></P>
+                <input type="text" value="<?php echo $municipio; ?>" placeholder="" name="municipio" required="">
+                <P><span class="bold">Dirección: </span></P>
+                <input type="text" value="<?php echo $direccion; ?>" placeholder="" name="direccion" required="">
+                <P><span class="bold">CP: </span></P>
+                <input type="number" value="<?php echo $cp; ?>" placeholder="" name="cp" required="">
+                <P><span class="bold">RFC: </span></P>
+                <input type="text" value="<?php echo $rfc; ?>" placeholder="" name="rfc" required="">
                 <div class="center">
                     <button type="submit" name="submit" value="submit" class="btn bg-verde btn-large">Guardar cambios</button>
                 </div>
@@ -57,12 +73,12 @@ include ('conexion.php');
             <p><span class="bold">Placa:  </span><?php echo $placa ?></p>
         </div>-->
         <div class="card animated bounceInDown">
-            <form action="" id="form-to-valid">
+            <form  id="form-to-valid">
                 <p class="card-title">Contraseña:</p>
                 <input type="password" name="password" placeholder="Ingresa tu contraseña actual" id="pass" required="">
                 <input type="password" name="valPassword" placeholder="Ingresa la nueva contraseñas" id="newpass" required="">
                 <div class="center">
-                    <button class="btn bg-verde btn-large" onclick="actualizarPass()"> Actualizar contraseña</button>
+                    <button class="btn bg-verde btn-large" onclick="actualizarPass();"> Actualizar contraseña</button>
                 </div>
             </form>
         </div>

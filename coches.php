@@ -93,7 +93,7 @@ switch ($opcion) {
 		$placa = $_GET['placa'];
 		include ('conexion.php');
     	$con = Conectarse();
-		$qry= "UPDATE `auto` SET `estado`= 0 WHERE placa = '{$placa}'";
+		$qry= "UPDATE `auto` SET `estado`= 1 WHERE placa = '{$placa}'";
     	$result = $con->query($qry);
 
 		break;
