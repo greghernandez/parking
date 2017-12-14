@@ -40,7 +40,7 @@ switch ($opcion) {
 			$id_usuario = $_SESSION['user'];
 				include ('conexion.php');
     					$con = Conectarse();
-						$qry= "INSERT INTO `auto`(`modelo`, `date`, `color`, `placa`, `estado`, `id_usuario`) VALUES ('{$modelo}', '{$fecha}', '{$color}', '{$placa}', 0, ".$id_usuario.")";
+						$qry= "INSERT INTO `auto`(`modelo`, `year`, `color`, `placa`, `estado`, `id_cliente`) VALUES ('{$modelo}', '{$fecha}', '{$color}', '{$placa}', 0, ".$id_usuario.")";
 
     					$result = $con->query($qry);
     					//echo $qry;
@@ -52,7 +52,7 @@ switch ($opcion) {
 		}
 		?>
 		<div class="card animated bounceInDown">
-			<form action="#" method="POST">
+			<form action="#" method="POST" id="form-to-valid">
 				<p class="card-title">Ingresa la información del coche:</p>
             	<p><span class="bold">Placa:  </span><input type="text"  name="placa" value="<?php echo ""; ?>" placeholder="Escribe la placa" required=""></p> 
             	<p><span class="bold">Modelo:  </span><input type="text"  name="modelo" value="<?php echo ""; ?>" placeholder="Escribe el modelo del coche"  required=""></p>
@@ -69,7 +69,7 @@ switch ($opcion) {
 	case 'administrar':
 		include ('conexion.php');
     	$con = Conectarse();
-		$qry= "SELECT * FROM auto WHERE id_usuario = '".$_SESSION['user']."'";
+		$qry= "SELECT * FROM auto WHERE id_cliente = '".$_SESSION['user']."'";
     	$result = $con->query($qry);  
 
    		while ($row = mysqli_fetch_array($result)){  

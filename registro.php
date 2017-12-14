@@ -36,7 +36,12 @@
 					$telefono = $_POST['telefono'];
 					$tarjeta = $_POST['tarjeta'];
 					$cvv = $_POST['cvv'];
-					//$tipo = $_POST['tipo'];
+					$tipo = $_POST['tipo'];
+					if ($tipo == 0) {
+						$tipo = "credito";
+					}else{
+						$tipo = "debito";
+					}
 					$password = $_POST['password'];
 					$estado = $_POST['estado'];
 					$municipio = $_POST['municipio'];
@@ -89,6 +94,9 @@
 				<label for="">Municipio:</label>
 				<input type="text" name="municipio" placeholder="Municipio" required="">
 
+				<label for="">Dirección:</label>
+				<input type="text" name="direccion" placeholder="Dirección" required="">
+
 				<label for="">CP:</label>
 				<input type="text" name="cp" placeholder="CP" required="">
 
@@ -106,9 +114,9 @@
 				<input type="number" name="cvv" placeholder="CVV" required="">
 
 				<label for="">Tipo:</label>
-				<select name="tipo" id="" required="e">
-					<option value="credito">Credito</option>
-					<option value="debito">Debito</option>
+				<select name="tipo" id="" required="">
+					<option value="credito" value="0">Credito</option>
+					<option value="debito" value="1">Debito</option>
 				</select>
 				
 				<div class="center ">

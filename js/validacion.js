@@ -36,10 +36,18 @@ $().ready(function() {
                 maxlength: 16,
                 minlength: 16
             },
+            cvv: {
+                required: true,
+                maxlength: 3,
+                minlength: 3
+            },
             estado: {
                 required: true
             },
             municipio: {
+                required: true
+            },
+            direccion: {
                 required: true
             },
             cp: {
@@ -57,6 +65,22 @@ $().ready(function() {
             },
             radioButton: {
                 required: true
+            },
+            placa: {
+                required: true,
+                maxlength: 9,
+                minlength: 9
+            },
+            modelo: {
+                required: true
+            },
+            color: {
+                required: true
+            },
+            año: {
+                required: true,
+                minlength: 4,
+                maxlength: 4
             }
         },
         messages: {
@@ -91,13 +115,25 @@ $().ready(function() {
                 maxlength: "<span class='errors-class'>El teléfono tiene que tener 10 dígitos</span>"           
             },
             tarjeta: {
-                required: "<span class='errors-class'>Tarjeta</span>"
+                required: "<span class='errors-class'>Debes proporcionar un numero de tarjeta</span>",
+                minlength: "<span class='errors-class'>Debes ingresar 16 dígitos</span>",
+                maxlength: "<span class='errors-class'>Debes ingresar 16 dígitos</span>"
+
+            },
+            cvv: {
+                required: "<span class='errors-class'>Debes proporcionar un cvv de 3 dígitos</span>",
+                minlength: "<span class='errors-class'>Debes ingresar un cvv de 3 dígitos</span>",
+                maxlength: "<span class='errors-class'>Debes ingresar 3 cvv dígitos</span>"
+
             },
             estado: {
                 required: "<span class='errors-class'>Escribe el estado al que perteneces</span>"
             },
             municipio: {
                 required: "<span class='errors-class'>Escribe el municipio al que perteneces</span>"
+            },
+            direccion: {
+                required: "<span class='errors-class'>Debes introducir una dirección</span>"
             },
             cp: {
                 required: "<span class='errors-class'>Escribe tu código postal</span>",
@@ -117,8 +153,25 @@ $().ready(function() {
             },
             radioButton: {
                 required: "<span class='errors-class'>Seleccione una opción</span>"
+            },
+            placa: {
+                required: "<span class='errors-class'>Debe ingresar una placa</span>",
+                minlength: "<span class='errors-class'>La placa debe tener 9 caracteres</span>",
+                maxlength: "<span class='errors-class'>La placa debe tener 9 caracteres</span>"
+            },
+            modelo: {
+                required: "<span class='errors-class'>Ingrese el modelo del coche</span>"
+            },
+            color: {
+                required: "<span class='errors-class'>Ingrese el color de su coche</span>"
+            },
+            año: {
+                required: "<span class='errors-class'>Ingrese el color de su coche</span>",
+                minlength: "<span class='errors-class'>Ingrese el año del modelo de su coche (4 dígitos)</span>",
             }
             
         }
-   });  
+   });
+//Validación de formulario coche
+  
 });
