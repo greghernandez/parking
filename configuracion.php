@@ -59,10 +59,10 @@ include ('conexion.php');
         <div class="card animated bounceInDown">
             <form action="" id="form-to-valid">
                 <p class="card-title">Contraseña:</p>
-                <input type="password" name="password" placeholder="Ingresa tu contraseña actual" required="">
-                <input type="password" name="valPassword" placeholder="Ingresa la nueva contraseñas" required="">
+                <input type="password" name="password" placeholder="Ingresa tu contraseña actual" id="pass" required="">
+                <input type="password" name="valPassword" placeholder="Ingresa la nueva contraseñas" id="newpass" required="">
                 <div class="center">
-                    <button class="btn bg-verde btn-large"> Actualizar contraseña</button>
+                    <button class="btn bg-verde btn-large" onclick="actualizarPass()"> Actualizar contraseña</button>
                 </div>
             </form>
         </div>
