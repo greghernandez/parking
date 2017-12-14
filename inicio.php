@@ -5,6 +5,9 @@
   	<!-- or -->
   	<link rel="stylesheet"
   	href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <!--<script src="js/jQuery.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/validacion.js"></script>-->
     <div class="encabezadoSesion">
 <center><img src="assets/icons/icon.png" class="logoSesion"></center>
  <?php
@@ -32,10 +35,10 @@
         
         <section>
         <h2>Iniciar Sesion</h2>
-        <form  action="" method="POST">
+        <form  action="" method="POST" id="form-to-valid">
           <input type="email" placeholder="Correo" id="correoSesion" name="correo" required="">
-          <input type="password" placeholder="Contraseña" id="contrasenaSesion" name="pass_user" required="">
-          <button name="inicio" id="registro-b">Iniciar</button>
+          <input type="password" placeholder="Contraseña" id="contrasenaSesion" name="pass_user" minlength="10" required="">
+          <button name="inicio" id="registro-b" type="submit" value="submit">Iniciar</button>
         </form>
         <button onclick="window.location='registro.php'" >Registrar</button>
         

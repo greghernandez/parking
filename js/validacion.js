@@ -13,6 +13,10 @@ $().ready(function() {
                 required: true,
                 minlength: 10
             },
+            pass_user: {
+                required: true,
+                minlength: 10
+            },
             valPassword: {
                 required: true,
                 minlength: 10,
@@ -23,6 +27,10 @@ $().ready(function() {
                 minlength: 2
             },
             email: {
+                required: true,
+                email: true
+            },
+            correo: {
                 required: true,
                 email: true
             },
@@ -96,6 +104,10 @@ $().ready(function() {
                 required: "<span class='errors-class'>Ingrese una contraseña</span>",
                 minlength: "<span class='errors-class'>La contraseña debe tener a lo menos 10 caracteres</span>"
             },
+            pass_user: {
+                required: "<span class='errors-class'>Ingrese una contraseña</span>",
+                minlength: "<span class='errors-class'>La contraseña debe tener a lo menos 10 caracteres</span>"
+            },
             valPassword: {
                 required: "<span class='errors-class'>Ingrese una contraseña</span>",
                 minlength: "<span class='errors-class'>La contraseña debe tener a lo menos 10 caracteres</span>",
@@ -106,6 +118,10 @@ $().ready(function() {
                 minlength: "<span class='errors-class'>La edad debe de contener a lo menos 2 digitos</span>"
             },
             email: {
+                required: "<span class='errors-class'>Debe ingresar un Email</span>",
+                email: "<span class='errors-class'>Debe ingresar un correo valido</span>"
+            },
+            correo: {
                 required: "<span class='errors-class'>Debe ingresar un Email</span>",
                 email: "<span class='errors-class'>Debe ingresar un correo valido</span>"
             },

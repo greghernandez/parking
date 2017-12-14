@@ -45,25 +45,30 @@
 					$password = $_POST['password'];
 					$estado = $_POST['estado'];
 					$municipio = $_POST['municipio'];
+					$direccion = $_POST['direccion'];
 					$cp = $_POST['cp'];
 					$rfc = $_POST['rfc'];
 
-					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($password) || empty($estado) || empty($municipio) || empty($cp) || empty($rfc)){
+					if(empty($nombre) || empty($apellidos) || empty($email) || empty($telefono) || empty($password) || empty($estado) || empty($municipio) || empty($cp) || empty($rfc) || empty($tarjeta) || empty($cvv) || empty($tipo)){
 						echo "<p class='badge center bg-rojo'> Por favor completa todos los campos</p>";
 					}else{
 						include ('conexion.php');
     					$con = Conectarse();
-						$qry= "INSERT INTO cliente (nombre, apellido, correo, password, telefono, estado, municipio, cp, rfc) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$estado}',  '{$municipio}', '{$cp}', '{$rfc}')";
+						$qry= "INSERT INTO cliente (nombre, apellido, correo, password, telefono, estado, municipio, cp, rfc, direccion) VALUES ('{$nombre}', '{$apellidos}', '{$email}', '{$password}', '{$telefono}', '{$estado}',  '{$municipio}', '{$cp}', '{$rfc}', '{$direccion}')";
 
     					echo $qry;
     					$result = $con->query($qry);
-    					$qry2= "SELECT id_cliente FROM cliente WHERE correo ='{$email}';";
-	 					$result2 = $con->query($qry2);
-         				$num_usuario = $result2->fetch_assoc()['id_cliente'];
+    					$qry3= "SELECT id_cliente FROM cliente WHERE correo ='{$email}';";
+	 					$result3 = $con->query($qry3);
+         				$num_usuario = $result3->fetch_assoc()['id_cliente'];
                 		session_start();
                 		$_SESSION['user']=$num_usuario;
-    					//header("Location: coches.php?opcion=agregar");
 
+                		//tarjeta de credito
+                		$qry2= "INSERT INTO tarjeta (no_tarjeta, id_cliente, cvv, tipo) VALUES ('{$tarjeta}', '{$num_usuario}', '{$cvv}', '{$tipo}')";
+    					$result2 = $con->query($qry2);
+    					header("Location: coches.php?opcion=agregar");
+										
 					}
 
 				}
