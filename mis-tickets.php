@@ -154,7 +154,7 @@
                     <p class="card-title">Parkimetro # <?php echo $row['id_parq']?></p><span class="bold">Tiempo: </span> <?php echo $row['tiempo'];?>
                     <span class="bold">Monto: </span> <?php echo $row['monto'];?>
                     <div class="center">
-                        <button class="btn bg-azul bg-large" type="" onclick="window.location='factura.php?id_parq='"">Factura</button>
+                        <button class="btn bg-azul bg-large" type="" onclick="window.location='factura.php?id_parq=<?php echo $row['id_parq'].'&monto='.$row['monto'];?>'">Factura</button>
                     </div>
                 </div>
                 <?php

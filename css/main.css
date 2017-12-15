@@ -520,3 +520,7 @@ select:focus {
     background-color: #0078a7;
     color: white;
 }
+@media print
+{
+.noprint {display:none;}
+}

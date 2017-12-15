@@ -1,4 +1,4 @@
-<div id="menu">
+<div id="menu" class="noprint">
     	<div class="cont-icon" onclick="window.location='index.php'">
     		<img class="menu-icon" src="assets/icons/home.png" alt="">
     	</div>

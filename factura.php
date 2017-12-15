@@ -43,6 +43,12 @@ include ('conexion.php');
 				<p><span class="bold">Dirección: </span>  <?php  echo $direccion; ?></p>
 				<p><span class="bold">CP: </span>  <?php  echo $cp; ?></p>
 				<p><span class="bold">RFC: </span> <?php  echo $rfc; ?></p>
+				<hr>
+				<div class="center">
+					<p><span class="bold">Concepto: </span> Pago de Parquimetro</p>
+					<p><span class="bold">Monto a pagar: </span><?php echo "$".$_GET['monto']." MXN"; ?></p>
+					<button class="btn btn-large bg-azul noprint" onclick="window.print();">Imprimir factura</button>
+				</div>
 		</div>
 	</div>
 <?php
